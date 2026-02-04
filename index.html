@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="개발자를 위한 코딩/IT 퀴즈 - 실력을 테스트하세요">
+    <meta name="theme-color" content="#1e1e1e">
+    <title>개발자 퀴즈</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/svg+xml" href="icon-192.svg">
+    <link rel="apple-touch-icon" href="icon-192.svg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 상단 배너 광고 영역 -->
+        <div class="ad-banner top-ad"></div>
+
+        <!-- 터미널 헤더 -->
+        <header class="terminal-header">
+            <div class="window-controls">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+            </div>
+            <div class="terminal-title">dev-quiz — bash</div>
+        </header>
+
+        <!-- 메인 콘텐츠 -->
+        <main class="terminal-body">
+            <!-- 시작 화면 -->
+            <section class="start-screen" id="start-screen">
+                <div class="ascii-art">
+╔══════════════════════════════════╗
+║     🖥️  개발자 퀴즈  🖥️          ║
+║                                  ║
+║   $ ./run_quiz --category all    ║
+║                                  ║
+╚══════════════════════════════════╝
+                </div>
+                <div class="terminal-prompt">
+                    <span class="prompt-user">dev@quiz</span>:<span class="prompt-path">~</span>$ 
+                    <span class="typing-text">카테고리를 선택하세요...</span>
+                </div>
+                <div class="category-grid">
+                    <button class="category-btn" data-category="all">
+                        <span class="cat-icon">💻</span>
+                        <span class="cat-name">전체</span>
+                    </button>
+                    <button class="category-btn" data-category="javascript">
+                        <span class="cat-icon">🟨</span>
+                        <span class="cat-name">JavaScript</span>
+                    </button>
+                    <button class="category-btn" data-category="python">
+                        <span class="cat-icon">🐍</span>
+                        <span class="cat-name">Python</span>
+                    </button>
+                    <button class="category-btn" data-category="web">
+                        <span class="cat-icon">🌐</span>
+                        <span class="cat-name">웹개발</span>
+                    </button>
+                    <button class="category-btn" data-category="database">
+                        <span class="cat-icon">🗄️</span>
+                        <span class="cat-name">DB/SQL</span>
+                    </button>
+                    <button class="category-btn" data-category="cs">
+                        <span class="cat-icon">🧠</span>
+                        <span class="cat-name">CS기초</span>
+                    </button>
+                    <button class="category-btn" data-category="git">
+                        <span class="cat-icon">🔀</span>
+                        <span class="cat-name">Git</span>
+                    </button>
+                    <button class="category-btn" data-category="devops">
+                        <span class="cat-icon">🐳</span>
+                        <span class="cat-name">DevOps</span>
+                    </button>
+                </div>
+                <div class="difficulty-selector">
+                    <span class="prompt-text">난이도:</span>
+                    <button class="diff-btn active" data-diff="all">ALL</button>
+                    <button class="diff-btn" data-diff="easy">EASY</button>
+                    <button class="diff-btn" data-diff="normal">NORMAL</button>
+                    <button class="diff-btn" data-diff="hard">HARD</button>
+                </div>
+                <button class="start-btn" id="start-btn">
+                    $ ./start_quiz<span class="cursor">_</span>
+                </button>
+            </section>
+
+            <!-- 퀴즈 화면 -->
+            <section class="quiz-screen hidden" id="quiz-screen">
+                <div class="quiz-header">
+                    <span class="question-num" id="question-num">[1/10]</span>
+                    <span class="score-display" id="score-display">Score: 0</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="question-block">
+                    <div class="code-comment">// Question</div>
+                    <pre class="question-text" id="question-text"></pre>
+                </div>
+                <div class="code-block" id="code-block"></div>
+                <div class="options-container" id="options-container"></div>
+            </section>
+
+            <!-- 결과 화면 -->
+            <section class="result-screen hidden" id="result-screen">
+                <div class="result-ascii">
+╔══════════════════════════════════╗
+║         QUIZ COMPLETED!          ║
+╚══════════════════════════════════╝
+                </div>
+                <div class="result-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">정답</span>
+                        <span class="stat-value" id="correct-count">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">점수</span>
+                        <span class="stat-value" id="final-score">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">등급</span>
+                        <span class="stat-value" id="grade">F</span>
+                    </div>
+                </div>
+                <div class="result-message" id="result-message"></div>
+                
+                <!-- 프리미엄 버튼 -->
+                <button class="premium-btn" id="premium-btn">
+                    <span class="premium-icon">✨</span>
+                    상세 해설 보기
+                    <span class="ad-tag">AD</span>
+                </button>
+                
+                <!-- 프리미엄 결과 -->
+                <div class="premium-result hidden" id="premium-result">
+                    <div class="premium-badge">✨ 오답 해설</div>
+                    <div id="premium-content"></div>
+                </div>
+
+                <div class="result-actions">
+                    <button class="action-btn retry" id="retry-btn">$ ./retry</button>
+                    <button class="action-btn share" id="share-btn">$ ./share</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- 전면 광고 모달 -->
+        <div class="interstitial-ad hidden" id="interstitial-ad">
+            <div class="ad-content">
+                <p>광고</p>
+                <div class="ad-placeholder">광고 영역</div>
+                <button id="close-ad" disabled>닫기 (<span id="countdown">5</span>)</button>
+            </div>
+        </div>
+
+        <!-- 하단 배너 광고 영역 -->
+        <div class="ad-banner bottom-ad"></div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
