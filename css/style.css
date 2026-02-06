@@ -186,7 +186,8 @@ body {
 }
 
 .diff-btn {
-    padding: 6px 12px;
+    padding: 10px 16px;
+    min-height: 44px;
     border: 1px solid var(--border-color);
     border-radius: 4px;
     background: transparent;
