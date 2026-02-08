@@ -362,7 +362,7 @@ developer quiz, coding test, programming, JavaScript, Python, technical intervie
 - 욕설: 없음
 
 **개인정보 처리방침**:
-- URL: https://swp1234.github.io/dev-quiz/privacy-policy.html
+- URL: https://dopabrain.com/dev-quiz/privacy-policy.html
 - 수집 정보: 없음 (로컬 저장소만 사용)
 - 외부 서버 전송: 없음
 
@@ -402,7 +402,7 @@ developer quiz, coding test, programming, JavaScript, Python, technical intervie
    - 도메인 소유권 검증
 
 3. **manifest.xml 설정**
-   - TWA URL: https://swp1234.github.io/dev-quiz/
+   - TWA URL: https://dopabrain.com/dev-quiz/
    - Theme color: #27ae60
    - App name (각 언어별 values 폴더)
 
