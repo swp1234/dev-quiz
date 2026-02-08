@@ -1,0 +1,68 @@
+{
+  "app": {
+    "title": "개발자 퀴즈 - 코딩 실력 테스트 | JavaScript, Python, Web 100문제",
+    "description": "JavaScript, Python, 웹개발, DB, Git 등 8개 카테고리 100문제로 코딩 실력을 테스트하세요! 난이도별 문제, 코드 예제 포함. 개발자 면접 준비에 최적."
+  },
+  "header": {
+    "title": "dev-quiz — bash"
+  },
+  "start": {
+    "asciiTitle": "🖥️  개발자 퀴즈  🖥️",
+    "prompt": "카테고리를 선택하세요...",
+    "selectCategory": "카테고리 선택",
+    "selectDifficulty": "난이도:",
+    "startButton": "$ ./start_quiz"
+  },
+  "categories": {
+    "all": "전체",
+    "javascript": "JavaScript",
+    "python": "Python",
+    "web": "웹개발",
+    "database": "DB/SQL",
+    "cs": "CS기초",
+    "git": "Git",
+    "devops": "DevOps"
+  },
+  "difficulty": {
+    "all": "ALL",
+    "easy": "EASY",
+    "normal": "NORMAL",
+    "hard": "HARD"
+  },
+  "quiz": {
+    "question": "// Question",
+    "score": "Score:",
+    "completed": "QUIZ COMPLETED!"
+  },
+  "results": {
+    "correct": "정답",
+    "score": "점수",
+    "grade": "등급",
+    "premiumExplain": "상세 해설 보기",
+    "premiumBadge": "✨ 오답 해설",
+    "retry": "$ ./retry",
+    "share": "$ ./share"
+  },
+  "recommendations": {
+    "title": "이것도 해보세요",
+    "quiz": {
+      "name": "상식 퀴즈",
+      "desc": "다양한 분야의 상식 퀴즈!"
+    },
+    "skyrunner": {
+      "name": "Sky Runner",
+      "desc": "우주 비행 아케이드 게임!"
+    },
+    "zigzag": {
+      "name": "Zigzag Runner",
+      "desc": "방향 전환 아케이드 게임!"
+    },
+    "emoji": {
+      "name": "이모지 머지",
+      "desc": "이모지 합쳐 진화시키기!"
+    }
+  },
+  "language": {
+    "select": "언어 선택"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "app": {
+    "title": "Developer Quiz - Test Your Coding Skills | JavaScript, Python, Web 100 Questions",
+    "description": "Test your coding skills with 100 questions across 8 categories including JavaScript, Python, Web Development, DB, and Git! Difficulty-based questions with code examples. Perfect for developer interview preparation."
+  },
+  "header": {
+    "title": "dev-quiz — bash"
+  },
+  "start": {
+    "asciiTitle": "🖥️  Developer Quiz  🖥️",
+    "prompt": "Select a category...",
+    "selectCategory": "Select Category",
+    "selectDifficulty": "Difficulty:",
+    "startButton": "$ ./start_quiz"
+  },
+  "categories": {
+    "all": "All",
+    "javascript": "JavaScript",
+    "python": "Python",
+    "web": "Web Development",
+    "database": "DB/SQL",
+    "cs": "CS Fundamentals",
+    "git": "Git",
+    "devops": "DevOps"
+  },
+  "difficulty": {
+    "all": "ALL",
+    "easy": "EASY",
+    "normal": "NORMAL",
+    "hard": "HARD"
+  },
+  "quiz": {
+    "question": "// Question",
+    "score": "Score:",
+    "completed": "QUIZ COMPLETED!"
+  },
+  "results": {
+    "correct": "Correct",
+    "score": "Score",
+    "grade": "Grade",
+    "premiumExplain": "View Detailed Explanation",
+    "premiumBadge": "✨ Wrong Answer Explanation",
+    "retry": "$ ./retry",
+    "share": "$ ./share"
+  },
+  "recommendations": {
+    "title": "Try These Too",
+    "quiz": {
+      "name": "General Knowledge Quiz",
+      "desc": "Quiz on various fields!"
+    },
+    "skyrunner": {
+      "name": "Sky Runner",
+      "desc": "Space flight arcade game!"
+    },
+    "zigzag": {
+      "name": "Zigzag Runner",
+      "desc": "Direction change arcade game!"
+    },
+    "emoji": {
+      "name": "Emoji Merge",
+      "desc": "Merge emojis and evolve!"
+    }
+  },
+  "language": {
+    "select": "Select Language"
+  }
+}

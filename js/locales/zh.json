@@ -1,0 +1,68 @@
+{
+  "app": {
+    "title": "开发者测验 - 测试您的编码技能 | JavaScript、Python、Web 100个问题",
+    "description": "通过100道跨8个类别的问题测试您的编码技能，包括JavaScript、Python、Web开发、数据库和Git！包含难度等级的问题和代码示例。非常适合开发人员面试准备。"
+  },
+  "header": {
+    "title": "dev-quiz — bash"
+  },
+  "start": {
+    "asciiTitle": "🖥️  开发者测验  🖥️",
+    "prompt": "选择一个类别...",
+    "selectCategory": "选择类别",
+    "selectDifficulty": "难度:",
+    "startButton": "$ ./start_quiz"
+  },
+  "categories": {
+    "all": "全部",
+    "javascript": "JavaScript",
+    "python": "Python",
+    "web": "网页开发",
+    "database": "数据库/SQL",
+    "cs": "计算机基础",
+    "git": "Git",
+    "devops": "DevOps"
+  },
+  "difficulty": {
+    "all": "全部",
+    "easy": "简单",
+    "normal": "普通",
+    "hard": "困难"
+  },
+  "quiz": {
+    "question": "// 问题",
+    "score": "分数:",
+    "completed": "测验完成!"
+  },
+  "results": {
+    "correct": "正确",
+    "score": "分数",
+    "grade": "等级",
+    "premiumExplain": "查看详细解释",
+    "premiumBadge": "✨ 错误答案解释",
+    "retry": "$ ./retry",
+    "share": "$ ./share"
+  },
+  "recommendations": {
+    "title": "也试试这些",
+    "quiz": {
+      "name": "常识问答",
+      "desc": "各个领域的常识测验！"
+    },
+    "skyrunner": {
+      "name": "Sky Runner",
+      "desc": "太空飞行街机游戏！"
+    },
+    "zigzag": {
+      "name": "Zigzag Runner",
+      "desc": "方向变化街机游戏！"
+    },
+    "emoji": {
+      "name": "表情符号合并",
+      "desc": "合并表情符号并进化！"
+    }
+  },
+  "language": {
+    "select": "选择语言"
+  }
+}
