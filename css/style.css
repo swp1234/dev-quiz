@@ -579,6 +579,78 @@ body {
     }
 }
 
+/* Daily Challenge Button */
+.daily-btn {
+    margin-top: 10px;
+    background: linear-gradient(135deg, rgba(86, 156, 214, 0.15), rgba(39, 174, 96, 0.15));
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+}
+
+.daily-btn:hover {
+    background: var(--accent-blue);
+    color: #fff;
+    border-color: var(--accent-blue);
+}
+
+.daily-icon { font-size: 1.2rem; }
+
+.daily-streak {
+    background: var(--primary);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.daily-streak:empty { display: none; }
+
+/* Stats Dashboard */
+.stats-dashboard {
+    margin-top: 16px;
+    padding: 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.stats-title {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.mini-stat {
+    text-align: center;
+}
+
+.mini-stat-value {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.mini-stat-label {
+    display: block;
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+    margin-top: 2px;
+}
+
 /* Recommendations Section */
 .recommendations-section { margin: 24px 0 0; padding: 0 16px; }
 .rec-title { font-size: 15px; font-weight: 700; color: rgba(255,255,255,0.5); margin-bottom: 12px; text-align: center; letter-spacing: 0.5px; }

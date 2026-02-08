@@ -1,0 +1,81 @@
+{
+  "app": {
+    "title": "Developer Quiz - Teste deine Codier-Fähigkeiten | JavaScript, Python, Web 100 Fragen",
+    "description": "Teste deine Codier-Fähigkeiten mit 100 Fragen über 8 Kategorien einschließlich JavaScript, Python, Web-Entwicklung, DB und Git! Schwierigkeitsbasierte Fragen mit Code-Beispielen. Perfekt zur Vorbereitung auf Entwickler-Interviews."
+  },
+  "header": {
+    "title": "dev-quiz — bash"
+  },
+  "start": {
+    "asciiTitle": "🖥️  Developer Quiz  🖥️",
+    "prompt": "Kategorie auswählen...",
+    "selectCategory": "Kategorie auswählen",
+    "selectDifficulty": "Schwierigkeit:",
+    "startButton": "$ ./start_quiz"
+  },
+  "categories": {
+    "all": "Alle",
+    "javascript": "JavaScript",
+    "python": "Python",
+    "web": "Web-Entwicklung",
+    "database": "DB/SQL",
+    "cs": "CS Grundlagen",
+    "git": "Git",
+    "devops": "DevOps"
+  },
+  "difficulty": {
+    "all": "ALLE",
+    "easy": "EINFACH",
+    "normal": "NORMAL",
+    "hard": "SCHWER"
+  },
+  "quiz": {
+    "question": "// Frage",
+    "score": "Punktzahl:",
+    "completed": "QUIZ ABGESCHLOSSEN!"
+  },
+  "results": {
+    "correct": "Korrekt",
+    "score": "Punktzahl",
+    "grade": "Note",
+    "premiumExplain": "Ausführliche Erklärung anzeigen",
+    "premiumBadge": "✨ Erklärung falscher Antworten",
+    "retry": "$ ./retry",
+    "share": "$ ./share"
+  },
+  "recommendations": {
+    "title": "Probiere auch diese",
+    "quiz": {
+      "name": "Allgemeinwissens-Quiz",
+      "desc": "Quiz zu verschiedenen Bereichen!"
+    },
+    "skyrunner": {
+      "name": "Sky Runner",
+      "desc": "Weltraum-Arcade-Spiel!"
+    },
+    "zigzag": {
+      "name": "Zigzag Runner",
+      "desc": "Richtungswechsel-Arcade-Spiel!"
+    },
+    "emoji": {
+      "name": "Emoji Merge",
+      "desc": "Verschmelze Emojis und entwickle sie!"
+    }
+  },
+  "language": {
+    "select": "Sprache auswählen"
+  },
+  "start": {
+    "dailyChallenge": "Tägliche Herausforderung",
+    "statsDashboard": "📊 Meine Rekorde",
+    "statsTotalGames": "Gesamte Spiele",
+    "statsHighScore": "Höchste Punktzahl",
+    "statsStreak": "Serie",
+    "statsAccuracy": "Genauigkeit"
+  },
+  "ads": {
+    "banner": "Werbung",
+    "interstitial": "Anzeige",
+    "close": "Schließen"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "app": {
+    "title": "Geliştirici Sınav - Kodlama Becerilerini Test Et | JavaScript, Python, Web 100 Soru",
+    "description": "JavaScript, Python, Web Geliştirme, Veritabanı ve Git dahil 8 kategoride 100 soru ile kodlama becerilerini test et! Kod örnekleri ile zorluk bazlı sorular. Geliştirici görüşmesi hazırlığı için mükemmel."
+  },
+  "header": {
+    "title": "dev-quiz — bash"
+  },
+  "start": {
+    "asciiTitle": "🖥️  Geliştirici Sınav  🖥️",
+    "prompt": "Bir kategori seç...",
+    "selectCategory": "Kategori Seç",
+    "selectDifficulty": "Zorluk:",
+    "startButton": "$ ./start_quiz"
+  },
+  "categories": {
+    "all": "Tümü",
+    "javascript": "JavaScript",
+    "python": "Python",
+    "web": "Web Geliştirme",
+    "database": "VT/SQL",
+    "cs": "BT Temelleri",
+    "git": "Git",
+    "devops": "DevOps"
+  },
+  "difficulty": {
+    "all": "HEPSİ",
+    "easy": "KOLAY",
+    "normal": "NORMAL",
+    "hard": "ZOR"
+  },
+  "quiz": {
+    "question": "// Soru",
+    "score": "Puan:",
+    "completed": "SINAV TAMAMLANDI!"
+  },
+  "results": {
+    "correct": "Doğru",
+    "score": "Puan",
+    "grade": "Not",
+    "premiumExplain": "Detaylı Açıklamayı Görüntüle",
+    "premiumBadge": "✨ Yanlış Cevap Açıklaması",
+    "retry": "$ ./retry",
+    "share": "$ ./share"
+  },
+  "recommendations": {
+    "title": "Bunları da Dene",
+    "quiz": {
+      "name": "Genel Bilgi Sınav",
+      "desc": "Çeşitli alanlarda sınav!"
+    },
+    "skyrunner": {
+      "name": "Sky Runner",
+      "desc": "Uzay uçak oyunu!"
+    },
+    "zigzag": {
+      "name": "Zigzag Runner",
+      "desc": "Yön değişikliği arcade oyunu!"
+    },
+    "emoji": {
+      "name": "Emoji Merge",
+      "desc": "Emojileri birleştir ve evrimle!"
+    }
+  },
+  "language": {
+    "select": "Dil Seç"
+  },
+  "start": {
+    "dailyChallenge": "Günlük Meydan Okuma",
+    "statsDashboard": "📊 Benim Kayıtları",
+    "statsTotalGames": "Toplam Oyunlar",
+    "statsHighScore": "En Yüksek Puan",
+    "statsStreak": "Dizi",
+    "statsAccuracy": "Doğruluk"
+  },
+  "ads": {
+    "banner": "Reklam",
+    "interstitial": "Reklam",
+    "close": "Kapat"
+  }
+}

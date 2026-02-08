@@ -64,5 +64,18 @@
   },
   "language": {
     "select": "选择语言"
+  },
+  "start": {
+    "dailyChallenge": "每日挑战",
+    "statsDashboard": "📊 我的记录",
+    "statsTotalGames": "总游戏数",
+    "statsHighScore": "最高分",
+    "statsStreak": "连续天数",
+    "statsAccuracy": "准确度"
+  },
+  "ads": {
+    "banner": "广告区域",
+    "interstitial": "广告",
+    "close": "关闭"
   }
 }

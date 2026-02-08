@@ -64,5 +64,18 @@
   },
   "language": {
     "select": "언어 선택"
+  },
+  "start": {
+    "dailyChallenge": "오늘의 챌린지",
+    "statsDashboard": "📊 나의 기록",
+    "statsTotalGames": "총 게임",
+    "statsHighScore": "최고 점수",
+    "statsStreak": "연속일",
+    "statsAccuracy": "정답률"
+  },
+  "ads": {
+    "banner": "광고 영역",
+    "interstitial": "광고",
+    "close": "닫기"
   }
 }

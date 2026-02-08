@@ -1,0 +1,81 @@
+{
+  "app": {
+    "title": "Quiz pour Développeurs - Teste tes Compétences en Codage | JavaScript, Python, Web 100 Questions",
+    "description": "Teste tes compétences en codage avec 100 questions dans 8 catégories incluant JavaScript, Python, Développement Web, DB et Git ! Questions basées sur la difficulté avec des exemples de code. Parfait pour la préparation aux entretiens pour développeurs."
+  },
+  "header": {
+    "title": "dev-quiz — bash"
+  },
+  "start": {
+    "asciiTitle": "🖥️  Quiz pour Développeurs  🖥️",
+    "prompt": "Sélectionne une catégorie...",
+    "selectCategory": "Sélectionner une Catégorie",
+    "selectDifficulty": "Difficulté:",
+    "startButton": "$ ./start_quiz"
+  },
+  "categories": {
+    "all": "Tous",
+    "javascript": "JavaScript",
+    "python": "Python",
+    "web": "Développement Web",
+    "database": "DB/SQL",
+    "cs": "Fondamentaux de l'Informatique",
+    "git": "Git",
+    "devops": "DevOps"
+  },
+  "difficulty": {
+    "all": "TOUS",
+    "easy": "FACILE",
+    "normal": "NORMAL",
+    "hard": "DIFFICILE"
+  },
+  "quiz": {
+    "question": "// Question",
+    "score": "Score:",
+    "completed": "QUIZ TERMINÉ!"
+  },
+  "results": {
+    "correct": "Correct",
+    "score": "Score",
+    "grade": "Note",
+    "premiumExplain": "Voir l'Explication Détaillée",
+    "premiumBadge": "✨ Explication de la Mauvaise Réponse",
+    "retry": "$ ./retry",
+    "share": "$ ./share"
+  },
+  "recommendations": {
+    "title": "Essaie aussi",
+    "quiz": {
+      "name": "Quiz de Connaissances Générales",
+      "desc": "Quiz sur divers domaines!"
+    },
+    "skyrunner": {
+      "name": "Sky Runner",
+      "desc": "Jeu d'arcade de vol spatial!"
+    },
+    "zigzag": {
+      "name": "Zigzag Runner",
+      "desc": "Jeu d'arcade de changement de direction!"
+    },
+    "emoji": {
+      "name": "Emoji Merge",
+      "desc": "Fusionne les emojis et évolue!"
+    }
+  },
+  "language": {
+    "select": "Sélectionner la Langue"
+  },
+  "start": {
+    "dailyChallenge": "Défi Quotidien",
+    "statsDashboard": "📊 Mes Records",
+    "statsTotalGames": "Jeux Totaux",
+    "statsHighScore": "Meilleur Score",
+    "statsStreak": "Série",
+    "statsAccuracy": "Précision"
+  },
+  "ads": {
+    "banner": "Publicité",
+    "interstitial": "Annonce",
+    "close": "Fermer"
+  }
+}

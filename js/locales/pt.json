@@ -1,0 +1,81 @@
+{
+  "app": {
+    "title": "Quiz do Desenvolvedor - Teste Suas Habilidades de Codificação | JavaScript, Python, Web 100 Questões",
+    "description": "Teste suas habilidades de codificação com 100 questões em 8 categorias incluindo JavaScript, Python, Desenvolvimento Web, BD e Git! Questões baseadas em dificuldade com exemplos de código. Perfeito para preparação de entrevista de desenvolvedor."
+  },
+  "header": {
+    "title": "dev-quiz — bash"
+  },
+  "start": {
+    "asciiTitle": "🖥️  Quiz do Desenvolvedor  🖥️",
+    "prompt": "Selecione uma categoria...",
+    "selectCategory": "Selecionar Categoria",
+    "selectDifficulty": "Dificuldade:",
+    "startButton": "$ ./start_quiz"
+  },
+  "categories": {
+    "all": "Todas",
+    "javascript": "JavaScript",
+    "python": "Python",
+    "web": "Desenvolvimento Web",
+    "database": "BD/SQL",
+    "cs": "Fundamentos de CI",
+    "git": "Git",
+    "devops": "DevOps"
+  },
+  "difficulty": {
+    "all": "TODAS",
+    "easy": "FÁCIL",
+    "normal": "NORMAL",
+    "hard": "DIFÍCIL"
+  },
+  "quiz": {
+    "question": "// Questão",
+    "score": "Pontuação:",
+    "completed": "QUIZ CONCLUÍDO!"
+  },
+  "results": {
+    "correct": "Correto",
+    "score": "Pontuação",
+    "grade": "Nota",
+    "premiumExplain": "Ver Explicação Detalhada",
+    "premiumBadge": "✨ Explicação de Resposta Incorreta",
+    "retry": "$ ./tentar_novamente",
+    "share": "$ ./compartilhar"
+  },
+  "recommendations": {
+    "title": "Experimente também",
+    "quiz": {
+      "name": "Quiz de Conhecimento Geral",
+      "desc": "Quiz em vários campos!"
+    },
+    "skyrunner": {
+      "name": "Sky Runner",
+      "desc": "Jogo arcade de voo espacial!"
+    },
+    "zigzag": {
+      "name": "Zigzag Runner",
+      "desc": "Jogo arcade de mudança de direção!"
+    },
+    "emoji": {
+      "name": "Emoji Merge",
+      "desc": "Mescle emojis e evolua!"
+    }
+  },
+  "language": {
+    "select": "Selecionar Idioma"
+  },
+  "start": {
+    "dailyChallenge": "Desafio Diário",
+    "statsDashboard": "📊 Meus Registros",
+    "statsTotalGames": "Jogos Totais",
+    "statsHighScore": "Pontuação Máxima",
+    "statsStreak": "Sequência",
+    "statsAccuracy": "Precisão"
+  },
+  "ads": {
+    "banner": "Publicidade",
+    "interstitial": "Anúncio",
+    "close": "Fechar"
+  }
+}

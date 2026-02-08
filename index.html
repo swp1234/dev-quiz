@@ -58,11 +58,18 @@
     <div class="language-selector">
         <button class="lang-btn" id="lang-toggle" title="Select Language">🌐</button>
         <div class="lang-menu hidden" id="lang-menu">
-            <button class="lang-option" data-lang="ko">한국어</button>
-            <button class="lang-option" data-lang="en">English</button>
-            <button class="lang-option" data-lang="zh">简体中文</button>
-            <button class="lang-option" data-lang="hi">हिन्दी</button>
-            <button class="lang-option" data-lang="ru">Русский</button>
+            <button class="lang-option" data-lang="ko">🇰🇷 한국어</button>
+            <button class="lang-option" data-lang="en">🇺🇸 English</button>
+            <button class="lang-option" data-lang="ja">🇯🇵 日本語</button>
+            <button class="lang-option" data-lang="es">🇪🇸 Español</button>
+            <button class="lang-option" data-lang="pt">🇧🇷 Português</button>
+            <button class="lang-option" data-lang="zh">🇨🇳 简体中文</button>
+            <button class="lang-option" data-lang="id">🇮🇩 Bahasa Indonesia</button>
+            <button class="lang-option" data-lang="tr">🇹🇷 Türkçe</button>
+            <button class="lang-option" data-lang="de">🇩🇪 Deutsch</button>
+            <button class="lang-option" data-lang="fr">🇫🇷 Français</button>
+            <button class="lang-option" data-lang="hi">🇮🇳 हिन्दी</button>
+            <button class="lang-option" data-lang="ru">🇷🇺 Русский</button>
         </div>
     </div>
 
@@ -140,6 +147,33 @@
                 <button class="start-btn" id="start-btn" data-i18n="start.startButton">
                     $ ./start_quiz<span class="cursor">_</span>
                 </button>
+                <button class="start-btn daily-btn" id="daily-btn">
+                    <span class="daily-icon">📅</span> <span data-i18n="start.dailyChallenge">오늘의 챌린지</span>
+                    <span class="daily-streak" id="daily-streak"></span>
+                </button>
+
+                <!-- 통계 대시보드 -->
+                <div class="stats-dashboard" id="stats-dashboard">
+                    <div class="stats-title" data-i18n="start.statsDashboard">📊 나의 기록</div>
+                    <div class="stats-row">
+                        <div class="mini-stat">
+                            <span class="mini-stat-value" id="stat-games">0</span>
+                            <span class="mini-stat-label" data-i18n="start.statsTotalGames">총 게임</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="mini-stat-value" id="stat-high">0</span>
+                            <span class="mini-stat-label" data-i18n="start.statsHighScore">최고 점수</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="mini-stat-value" id="stat-streak">0</span>
+                            <span class="mini-stat-label" data-i18n="start.statsStreak">연속일</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="mini-stat-value" id="stat-avg">0%</span>
+                            <span class="mini-stat-label" data-i18n="start.statsAccuracy">정답률</span>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <!-- 퀴즈 화면 -->
@@ -240,9 +274,9 @@
         <!-- 전면 광고 모달 -->
         <div class="interstitial-ad hidden" id="interstitial-ad">
             <div class="ad-content">
-                <p data-i18n="quiz.question">광고</p>
-                <div class="ad-placeholder">광고 영역</div>
-                <button id="close-ad" disabled>닫기 (<span id="countdown">5</span>)</button>
+                <p data-i18n="ads.interstitial">광고</p>
+                <div class="ad-placeholder" data-i18n="ads.banner">광고 영역</div>
+                <button id="close-ad" disabled><span data-i18n="ads.close">닫기</span> (<span id="countdown">5</span>)</button>
             </div>
         </div>
 

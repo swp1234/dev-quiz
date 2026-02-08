@@ -1,0 +1,81 @@
+{
+  "app": {
+    "title": "Developer Quiz - Prueba tus Habilidades de Programación | JavaScript, Python, Web 100 Preguntas",
+    "description": "¡Prueba tus habilidades de programación con 100 preguntas en 8 categorías incluyendo JavaScript, Python, Desarrollo Web, BD y Git! Preguntas basadas en dificultad con ejemplos de código. Perfecto para preparación de entrevistas de desarrollador."
+  },
+  "header": {
+    "title": "dev-quiz — bash"
+  },
+  "start": {
+    "asciiTitle": "🖥️  Developer Quiz  🖥️",
+    "prompt": "Selecciona una categoría...",
+    "selectCategory": "Seleccionar Categoría",
+    "selectDifficulty": "Dificultad:",
+    "startButton": "$ ./start_quiz"
+  },
+  "categories": {
+    "all": "Todas",
+    "javascript": "JavaScript",
+    "python": "Python",
+    "web": "Desarrollo Web",
+    "database": "BD/SQL",
+    "cs": "Fundamentos de CS",
+    "git": "Git",
+    "devops": "DevOps"
+  },
+  "difficulty": {
+    "all": "TODAS",
+    "easy": "FÁCIL",
+    "normal": "NORMAL",
+    "hard": "DIFÍCIL"
+  },
+  "quiz": {
+    "question": "// Pregunta",
+    "score": "Puntuación:",
+    "completed": "¡CUESTIONARIO COMPLETADO!"
+  },
+  "results": {
+    "correct": "Correcto",
+    "score": "Puntuación",
+    "grade": "Calificación",
+    "premiumExplain": "Ver Explicación Detallada",
+    "premiumBadge": "✨ Explicación de Respuesta Incorrecta",
+    "retry": "$ ./retry",
+    "share": "$ ./share"
+  },
+  "recommendations": {
+    "title": "Prueba También Estos",
+    "quiz": {
+      "name": "Quiz de Conocimiento General",
+      "desc": "¡Quiz de varios campos!"
+    },
+    "skyrunner": {
+      "name": "Sky Runner",
+      "desc": "¡Juego de arcade de vuelo espacial!"
+    },
+    "zigzag": {
+      "name": "Zigzag Runner",
+      "desc": "¡Juego de arcade de cambio de dirección!"
+    },
+    "emoji": {
+      "name": "Emoji Merge",
+      "desc": "¡Fusiona emojis y evoluciona!"
+    }
+  },
+  "language": {
+    "select": "Seleccionar Idioma"
+  },
+  "start": {
+    "dailyChallenge": "Desafío Diario",
+    "statsDashboard": "📊 Mis Registros",
+    "statsTotalGames": "Juegos Totales",
+    "statsHighScore": "Puntuación Máxima",
+    "statsStreak": "Racha",
+    "statsAccuracy": "Precisión"
+  },
+  "ads": {
+    "banner": "Publicidad",
+    "interstitial": "Anuncio",
+    "close": "Cerrar"
+  }
+}

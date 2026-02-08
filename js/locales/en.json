@@ -64,5 +64,18 @@
   },
   "language": {
     "select": "Select Language"
+  },
+  "start": {
+    "dailyChallenge": "Today's Challenge",
+    "statsDashboard": "📊 My Records",
+    "statsTotalGames": "Total Games",
+    "statsHighScore": "High Score",
+    "statsStreak": "Streak",
+    "statsAccuracy": "Accuracy"
+  },
+  "ads": {
+    "banner": "Advertisement",
+    "interstitial": "Ad",
+    "close": "Close"
   }
 }

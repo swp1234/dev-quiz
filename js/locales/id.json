@@ -1,0 +1,81 @@
+{
+  "app": {
+    "title": "Kuis Pengembang - Uji Keterampilan Coding Anda | JavaScript, Python, Web 100 Pertanyaan",
+    "description": "Uji keterampilan coding Anda dengan 100 pertanyaan di 8 kategori termasuk JavaScript, Python, Pengembangan Web, DB, dan Git! Pertanyaan berbasis tingkat kesulitan dengan contoh kode. Sempurna untuk persiapan wawancara pengembang."
+  },
+  "header": {
+    "title": "dev-quiz — bash"
+  },
+  "start": {
+    "asciiTitle": "🖥️  Kuis Pengembang  🖥️",
+    "prompt": "Pilih kategori...",
+    "selectCategory": "Pilih Kategori",
+    "selectDifficulty": "Tingkat Kesulitan:",
+    "startButton": "$ ./start_quiz"
+  },
+  "categories": {
+    "all": "Semua",
+    "javascript": "JavaScript",
+    "python": "Python",
+    "web": "Pengembangan Web",
+    "database": "DB/SQL",
+    "cs": "Dasar-dasar CS",
+    "git": "Git",
+    "devops": "DevOps"
+  },
+  "difficulty": {
+    "all": "SEMUA",
+    "easy": "MUDAH",
+    "normal": "NORMAL",
+    "hard": "SULIT"
+  },
+  "quiz": {
+    "question": "// Pertanyaan",
+    "score": "Skor:",
+    "completed": "KUIS SELESAI!"
+  },
+  "results": {
+    "correct": "Benar",
+    "score": "Skor",
+    "grade": "Nilai",
+    "premiumExplain": "Lihat Penjelasan Lengkap",
+    "premiumBadge": "✨ Penjelasan Jawaban Salah",
+    "retry": "$ ./retry",
+    "share": "$ ./share"
+  },
+  "recommendations": {
+    "title": "Coba Juga",
+    "quiz": {
+      "name": "Kuis Pengetahuan Umum",
+      "desc": "Kuis berbagai bidang!"
+    },
+    "skyrunner": {
+      "name": "Sky Runner",
+      "desc": "Permainan arcade penerbangan luar angkasa!"
+    },
+    "zigzag": {
+      "name": "Zigzag Runner",
+      "desc": "Permainan arcade perubahan arah!"
+    },
+    "emoji": {
+      "name": "Emoji Merge",
+      "desc": "Gabungkan emoji dan kembangkan!"
+    }
+  },
+  "language": {
+    "select": "Pilih Bahasa"
+  },
+  "start": {
+    "dailyChallenge": "Tantangan Harian",
+    "statsDashboard": "📊 Rekor Saya",
+    "statsTotalGames": "Total Permainan",
+    "statsHighScore": "Skor Tertinggi",
+    "statsStreak": "Seri",
+    "statsAccuracy": "Akurasi"
+  },
+  "ads": {
+    "banner": "Iklan",
+    "interstitial": "Iklan",
+    "close": "Tutup"
+  }
+}

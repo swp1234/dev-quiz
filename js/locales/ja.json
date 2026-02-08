@@ -1,0 +1,81 @@
+{
+  "app": {
+    "title": "Developer Quiz - コーディングスキルをテスト | JavaScript、Python、Web 100問",
+    "description": "JavaScript、Python、Web開発、DB、Gitを含む8カテゴリーの100問でコーディングスキルをテストしてください！難易度別の質問とコード例。面接対策に最適です。"
+  },
+  "header": {
+    "title": "dev-quiz — bash"
+  },
+  "start": {
+    "asciiTitle": "🖥️  Developer Quiz  🖥️",
+    "prompt": "カテゴリーを選択...",
+    "selectCategory": "カテゴリーを選択",
+    "selectDifficulty": "難易度:",
+    "startButton": "$ ./start_quiz"
+  },
+  "categories": {
+    "all": "すべて",
+    "javascript": "JavaScript",
+    "python": "Python",
+    "web": "Web開発",
+    "database": "DB/SQL",
+    "cs": "CS基礎",
+    "git": "Git",
+    "devops": "DevOps"
+  },
+  "difficulty": {
+    "all": "すべて",
+    "easy": "簡単",
+    "normal": "普通",
+    "hard": "難しい"
+  },
+  "quiz": {
+    "question": "// 問題",
+    "score": "スコア:",
+    "completed": "クイズ完了！"
+  },
+  "results": {
+    "correct": "正解",
+    "score": "スコア",
+    "grade": "成績",
+    "premiumExplain": "詳細説明を表示",
+    "premiumBadge": "✨ 不正解の説明",
+    "retry": "$ ./retry",
+    "share": "$ ./share"
+  },
+  "recommendations": {
+    "title": "こちらも試してみてください",
+    "quiz": {
+      "name": "一般知識クイズ",
+      "desc": "様々なジャンルのクイズ！"
+    },
+    "skyrunner": {
+      "name": "スカイランナー",
+      "desc": "宇宙飛行アーケードゲーム！"
+    },
+    "zigzag": {
+      "name": "ジグザグランナー",
+      "desc": "方向転換アーケードゲーム！"
+    },
+    "emoji": {
+      "name": "絵文字マージ",
+      "desc": "絵文字をマージして進化させる！"
+    }
+  },
+  "language": {
+    "select": "言語を選択"
+  },
+  "start": {
+    "dailyChallenge": "今日のチャレンジ",
+    "statsDashboard": "📊 マイレコード",
+    "statsTotalGames": "総ゲーム数",
+    "statsHighScore": "ハイスコア",
+    "statsStreak": "連続日数",
+    "statsAccuracy": "正解率"
+  },
+  "ads": {
+    "banner": "広告",
+    "interstitial": "広告",
+    "close": "閉じる"
+  }
+}

@@ -14,8 +14,10 @@ class DevQuizApp {
         this.setupCategoryButtons();
         this.setupDifficultyButtons();
         this.setupStartButton();
+        this.setupDailyChallenge();
         this.setupResultActions();
         this.setupPremiumButton();
+        this.renderStatsDashboard();
         this.registerServiceWorker();
     }
 
@@ -217,6 +219,25 @@ class DevQuizApp {
         document.getElementById('grade').textContent = grade;
         document.getElementById('result-message').textContent = message;
 
+        // 일일 챌린지 완료 처리
+        if (this.isDailyChallenge) {
+            const today = new Date().toDateString();
+            localStorage.setItem('devQuizDaily', JSON.stringify({
+                date: today,
+                completed: true,
+                score: this.score,
+                grade: grade
+            }));
+            this.isDailyChallenge = false;
+
+            // 버튼 업데이트
+            const dailyBtn = document.getElementById('daily-btn');
+            if (dailyBtn) {
+                dailyBtn.style.opacity = '0.5';
+                dailyBtn.innerHTML = '<span class="daily-icon">✅</span> 오늘의 챌린지 완료!';
+            }
+        }
+
         // 통계 저장
         this.saveStats();
     }
@@ -226,7 +247,114 @@ class DevQuizApp {
         stats.totalGames = (stats.totalGames || 0) + 1;
         stats.totalScore = (stats.totalScore || 0) + this.score;
         stats.highScore = Math.max(stats.highScore || 0, this.score);
+
+        // 정답률 추적
+        const correctCount = this.userAnswers.filter(a => a.isCorrect).length;
+        stats.totalCorrect = (stats.totalCorrect || 0) + correctCount;
+        stats.totalQuestions = (stats.totalQuestions || 0) + this.questions.length;
+
+        // 연속일 추적
+        const today = new Date().toDateString();
+        if (stats.lastPlayDate !== today) {
+            const yesterday = new Date();
+            yesterday.setDate(yesterday.getDate() - 1);
+            if (stats.lastPlayDate === yesterday.toDateString()) {
+                stats.streak = (stats.streak || 0) + 1;
+            } else if (stats.lastPlayDate) {
+                stats.streak = 1;
+            } else {
+                stats.streak = 1;
+            }
+            stats.lastPlayDate = today;
+        }
+
         localStorage.setItem('devQuizStats', JSON.stringify(stats));
+        this.renderStatsDashboard();
+    }
+
+    // 일일 챌린지 설정
+    setupDailyChallenge() {
+        const dailyBtn = document.getElementById('daily-btn');
+        if (!dailyBtn) return;
+
+        // 연속일 표시
+        const stats = JSON.parse(localStorage.getItem('devQuizStats') || '{}');
+        const streakEl = document.getElementById('daily-streak');
+        if (stats.streak && stats.streak > 0) {
+            streakEl.textContent = `🔥 ${stats.streak}일`;
+        }
+
+        // 오늘 이미 완료했는지 확인
+        const today = new Date().toDateString();
+        const dailyData = JSON.parse(localStorage.getItem('devQuizDaily') || '{}');
+        if (dailyData.date === today && dailyData.completed) {
+            dailyBtn.style.opacity = '0.5';
+            dailyBtn.innerHTML = '<span class="daily-icon">✅</span> 오늘의 챌린지 완료!';
+        }
+
+        dailyBtn.addEventListener('click', () => {
+            this.startDailyChallenge();
+        });
+    }
+
+    startDailyChallenge() {
+        const today = new Date().toDateString();
+        const dailyData = JSON.parse(localStorage.getItem('devQuizDaily') || '{}');
+
+        if (dailyData.date === today && dailyData.completed) {
+            alert('오늘의 챌린지는 이미 완료했습니다! 내일 다시 도전하세요.');
+            return;
+        }
+
+        // 날짜 기반 시드로 모든 사용자에게 같은 문제 제공
+        const seed = this.hashCode(today);
+        const shuffled = [...quizData].sort((a, b) => {
+            const ha = this.hashCode(today + a.question);
+            const hb = this.hashCode(today + b.question);
+            return ha - hb;
+        });
+
+        this.questions = shuffled.slice(0, 10);
+        this.currentQuestion = 0;
+        this.score = 0;
+        this.userAnswers = [];
+        this.isDailyChallenge = true;
+
+        document.getElementById('start-screen').classList.add('hidden');
+        document.getElementById('quiz-screen').classList.remove('hidden');
+        document.getElementById('result-screen').classList.add('hidden');
+
+        this.showQuestion();
+    }
+
+    hashCode(str) {
+        let hash = 0;
+        for (let i = 0; i < str.length; i++) {
+            const char = str.charCodeAt(i);
+            hash = ((hash << 5) - hash) + char;
+            hash = hash & hash;
+        }
+        return hash;
+    }
+
+    // 통계 대시보드 렌더링
+    renderStatsDashboard() {
+        const stats = JSON.parse(localStorage.getItem('devQuizStats') || '{}');
+
+        const gamesEl = document.getElementById('stat-games');
+        const highEl = document.getElementById('stat-high');
+        const streakEl = document.getElementById('stat-streak');
+        const avgEl = document.getElementById('stat-avg');
+
+        if (gamesEl) gamesEl.textContent = stats.totalGames || 0;
+        if (highEl) highEl.textContent = stats.highScore || 0;
+        if (streakEl) streakEl.textContent = stats.streak || 0;
+        if (avgEl) {
+            const rate = stats.totalQuestions > 0
+                ? Math.round((stats.totalCorrect / stats.totalQuestions) * 100)
+                : 0;
+            avgEl.textContent = `${rate}%`;
+        }
     }
 
     setupResultActions() {
