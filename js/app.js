@@ -11,14 +11,18 @@ class DevQuizApp {
     }
 
     init() {
-        this.setupCategoryButtons();
-        this.setupDifficultyButtons();
-        this.setupStartButton();
-        this.setupDailyChallenge();
-        this.setupResultActions();
-        this.setupPremiumButton();
-        this.renderStatsDashboard();
-        this.registerServiceWorker();
+        try {
+            this.setupCategoryButtons();
+            this.setupDifficultyButtons();
+            this.setupStartButton();
+            this.setupDailyChallenge();
+            this.setupResultActions();
+            this.setupPremiumButton();
+            this.renderStatsDashboard();
+            this.registerServiceWorker();
+        } catch (e) {
+            console.error('앱 초기화 오류:', e);
+        }
     }
 
     setupCategoryButtons() {
@@ -346,12 +350,12 @@ class DevQuizApp {
         const streakEl = document.getElementById('stat-streak');
         const avgEl = document.getElementById('stat-avg');
 
-        if (gamesEl) gamesEl.textContent = stats.totalGames || 0;
-        if (highEl) highEl.textContent = stats.highScore || 0;
-        if (streakEl) streakEl.textContent = stats.streak || 0;
+        if (gamesEl) gamesEl.textContent = stats?.totalGames || 0;
+        if (highEl) highEl.textContent = stats?.highScore || 0;
+        if (streakEl) streakEl.textContent = stats?.streak || 0;
         if (avgEl) {
-            const rate = stats.totalQuestions > 0
-                ? Math.round((stats.totalCorrect / stats.totalQuestions) * 100)
+            const rate = (stats?.totalQuestions || 0) > 0
+                ? Math.round(((stats?.totalCorrect || 0) / (stats?.totalQuestions || 1)) * 100)
                 : 0;
             avgEl.textContent = `${rate}%`;
         }
