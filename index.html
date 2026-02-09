@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="max-image-preview:large">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3600813755953882" crossorigin="anonymous"></script>
-    <meta name="description" content="JavaScript, Python, 웹개발, DB, Git 등 8개 카테고리 100문제로 코딩 실력을 테스트하세요! 난이도별 문제, 코드 예제 포함. 개발자 면접 준비에 최적.">
-    <meta name="keywords" content="코딩 퀴즈, 개발자 퀴즈, IT 퀴즈, 프로그래밍 테스트, JavaScript 퀴즈, Python 퀴즈, 개발자 실력 테스트, 코딩 면접">
+    <meta name="description" content="JavaScript, Python, 웹개발, DB, Git 등 8개 카테고리 100문제로 코딩 실력을 테스트하세요! 💻 난이도별 문제, 코드 예제 포함. 개발자 면접 준비에 최적!">
+    <meta name="keywords" content="코딩 퀴즈, 개발자 퀴즈, IT 퀴즈, 프로그래밍 테스트, JavaScript 퀴즈, Python 퀴즈, 개발자 실력 테스트, 코딩 면접, 기술 인터뷰">
     <meta name="theme-color" content="#1e1e1e">
-    <title>개발자 퀴즈 - 코딩 실력 테스트 | JavaScript, Python, Web 100문제</title>
+    <title>개발자 퀴즈 💻 - 코딩 실력 테스트 | JavaScript, Python, Web</title>
     <script src="js/i18n.js"></script>
     <link rel="canonical" href="https://dopabrain.com/dev-quiz/">
     <link rel="manifest" href="manifest.json">
@@ -27,16 +27,22 @@
         .lang-option.active { background: rgba(39,174,96,0.3); font-weight: 600; }
     </style>
     <!-- Open Graph & Social Media Meta Tags -->
-    <meta property="og:title" content="개발자 퀴즈 - 당신의 코딩 실력은 몇 점?">
-    <meta property="og:description" content="JavaScript, Python, Web 등 100문제로 테스트! 코딩 면접 준비에 최적 💻">
+    <meta property="og:title" content="개발자 퀴즈 💻 - 당신의 코딩 실력은 몇 점?">
+    <meta property="og:description" content="JavaScript, Python, Web 등 100문제로 테스트! 💻 코딩 면접 준비에 최적! 8개 카테고리 도전!">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dopabrain.com/dev-quiz/">
     <meta property="og:image" content="https://dopabrain.com/dev-quiz/icon-512.svg">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:image:type" content="image/svg+xml">
     <meta property="og:locale" content="ko_KR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="ja_JP">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="개발자 퀴즈 💻">
-    <meta name="twitter:description" content="코딩 실력 테스트! 100문제 도전">
+    <meta name="twitter:title" content="개발자 퀴즈 💻 - 코딩 실력 테스트">
+    <meta name="twitter:description" content="100문제로 테스트! 💻 면접 준비는 이걸로!">
     <meta name="twitter:image" content="https://dopabrain.com/dev-quiz/icon-512.svg">
+    <meta name="twitter:site" content="@dopabrain">
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
@@ -76,6 +82,14 @@
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-J8GSWM40TV');</script>
 </head>
 <body>
+    <div class="app-loader" id="app-loader">
+        <div class="loader-content">
+            <div class="loader-emoji">💻</div>
+            <div class="loader-spinner"></div>
+            <div class="loader-text" data-i18n="app.loading">로딩 중...</div>
+        </div>
+    </div>
+
     <!-- Language Selector -->
     <div class="language-selector">
         <button class="lang-btn" id="lang-toggle" title="Select Language">🌐</button>
