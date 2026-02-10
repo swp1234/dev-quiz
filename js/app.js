@@ -21,7 +21,8 @@ class DevQuizApp {
             this.renderStatsDashboard();
             this.registerServiceWorker();
         } catch (e) {
-            console.error('앱 초기화 오류:', e);
+            const errorMsg = window.i18n?.t('daily.appInitError') || 'App initialization error:';
+            console.error(errorMsg, e);
         }
     }
 
@@ -199,25 +200,25 @@ class DevQuizApp {
         // 등급 계산
         const percentage = (this.score / maxScore) * 100;
         let grade, message;
-        
+
         if (percentage >= 90) {
             grade = 'S';
-            message = '🎉 완벽한 실력! 당신은 시니어 개발자급입니다.';
+            message = window.i18n?.t('grades.S') || '🎉 Perfect! You\'re at senior developer level.';
         } else if (percentage >= 80) {
             grade = 'A';
-            message = '👏 훌륭합니다! 탄탄한 기본기를 갖추고 있습니다.';
+            message = window.i18n?.t('grades.A') || '👏 Excellent! You have solid fundamentals.';
         } else if (percentage >= 70) {
             grade = 'B';
-            message = '👍 좋습니다! 조금만 더 공부하면 A등급!';
+            message = window.i18n?.t('grades.B') || '👍 Good! A bit more study and you\'ll reach grade A!';
         } else if (percentage >= 60) {
             grade = 'C';
-            message = '📚 기본은 있지만 더 학습이 필요합니다.';
+            message = window.i18n?.t('grades.C') || '📚 You have the basics, but need more learning.';
         } else if (percentage >= 50) {
             grade = 'D';
-            message = '💪 아직 갈 길이 멀지만, 포기하지 마세요!';
+            message = window.i18n?.t('grades.D') || '💪 You have a long way to go, but don\'t give up!';
         } else {
             grade = 'F';
-            message = '📖 기초부터 다시! 하지만 시작이 반입니다.';
+            message = window.i18n?.t('grades.F') || '📖 Start from the basics! But remember, getting started is half the battle!';
         }
 
         document.getElementById('grade').textContent = grade;
@@ -238,7 +239,8 @@ class DevQuizApp {
             const dailyBtn = document.getElementById('daily-btn');
             if (dailyBtn) {
                 dailyBtn.style.opacity = '0.5';
-                dailyBtn.innerHTML = '<span class="daily-icon">✅</span> 오늘의 챌린지 완료!';
+                const completedText = window.i18n?.t('daily.completed') || 'Today\'s challenge complete!';
+                dailyBtn.innerHTML = `<span class="daily-icon">✅</span> ${completedText}`;
             }
         }
 
@@ -285,7 +287,8 @@ class DevQuizApp {
         const stats = JSON.parse(localStorage.getItem('devQuizStats') || '{}');
         const streakEl = document.getElementById('daily-streak');
         if (stats.streak && stats.streak > 0) {
-            streakEl.textContent = `🔥 ${stats.streak}일`;
+            const streakTemplate = window.i18n?.t('daily.streakDays') || '🔥 {count} days';
+            streakEl.textContent = streakTemplate.replace('{count}', stats.streak);
         }
 
         // 오늘 이미 완료했는지 확인
@@ -293,7 +296,8 @@ class DevQuizApp {
         const dailyData = JSON.parse(localStorage.getItem('devQuizDaily') || '{}');
         if (dailyData.date === today && dailyData.completed) {
             dailyBtn.style.opacity = '0.5';
-            dailyBtn.innerHTML = '<span class="daily-icon">✅</span> 오늘의 챌린지 완료!';
+            const completedText = window.i18n?.t('daily.completed') || 'Today\'s challenge complete!';
+            dailyBtn.innerHTML = `<span class="daily-icon">✅</span> ${completedText}`;
         }
 
         dailyBtn.addEventListener('click', () => {
@@ -306,7 +310,8 @@ class DevQuizApp {
         const dailyData = JSON.parse(localStorage.getItem('devQuizDaily') || '{}');
 
         if (dailyData.date === today && dailyData.completed) {
-            alert('오늘의 챌린지는 이미 완료했습니다! 내일 다시 도전하세요.');
+            const msg = window.i18n?.t('daily.alreadyCompleted') || 'You\'ve already completed today\'s challenge! Try again tomorrow.';
+            alert(msg);
             return;
         }
 
@@ -375,18 +380,22 @@ class DevQuizApp {
     shareResult() {
         const correctCount = this.userAnswers.filter(a => a.isCorrect).length;
         const grade = document.getElementById('grade').textContent;
-        
-        const text = `🖥️ 개발자 퀴즈 결과\n\n` +
-            `✅ 정답: ${correctCount}/${this.questions.length}\n` +
-            `📊 점수: ${this.score}\n` +
-            `🏆 등급: ${grade}\n\n` +
-            `당신의 개발 실력을 테스트해보세요!`;
+
+        const template = window.i18n?.t('share.text') || '🖥️ Developer Quiz Results\n\n✅ Correct: {correct}/{total}\n📊 Score: {score}\n🏆 Grade: {grade}\n\nTest your coding skills!';
+        const text = template
+            .replace('{correct}', correctCount)
+            .replace('{total}', this.questions.length)
+            .replace('{score}', this.score)
+            .replace('{grade}', grade);
+
+        const shareTitle = window.i18n?.t('share.title') || 'Developer Quiz';
 
         if (navigator.share) {
-            navigator.share({ title: '개발자 퀴즈', text });
+            navigator.share({ title: shareTitle, text });
         } else {
             navigator.clipboard.writeText(text);
-            alert('결과가 클립보드에 복사되었습니다!');
+            const copiedMsg = window.i18n?.t('share.copied') || 'Result copied to clipboard!';
+            alert(copiedMsg);
         }
     }
 
@@ -416,11 +425,13 @@ class DevQuizApp {
             if (seconds <= 0) {
                 clearInterval(timer);
                 closeBtn.disabled = false;
-                closeBtn.textContent = '닫기';
+                const closeText = window.i18n?.t('ads.close') || 'Close';
+                closeBtn.textContent = closeText;
 
                 closeBtn.onclick = () => {
                     adModal.classList.add('hidden');
-                    closeBtn.textContent = '닫기 (5)';
+                    const closeDefault = window.i18n?.t('ads.closeCountdown') || 'Close ({count})';
+                    closeBtn.textContent = closeDefault.replace('{count}', '5');
                     if (callback) callback();
                 };
             }
@@ -429,29 +440,35 @@ class DevQuizApp {
 
     showPremiumContent() {
         const wrongAnswers = this.userAnswers.filter(a => !a.isCorrect);
-        
+
         let content = '';
-        
+
         if (wrongAnswers.length === 0) {
-            content = '🎉 완벽! 모든 문제를 맞추셨습니다!\n\n';
-            content += '축하합니다! 당신은 정말 뛰어난 개발자입니다.\n';
-            content += '더 어려운 난이도에 도전해보세요!';
+            content = window.i18n?.t('premium.perfect') || '🎉 Perfect! You got all the questions right!\n\nCongratulations! You\'re a truly outstanding developer.\nTry challenging higher difficulty levels!';
         } else {
-            content = '📚 오답 노트\n\n';
-            
+            const wrongNotesLabel = window.i18n?.t('premium.wrongNotes') || '📚 Wrong Answer Notes';
+            content = `${wrongNotesLabel}\n\n`;
+
             wrongAnswers.forEach((item, idx) => {
                 const q = item.question;
-                content += `━━━━━━━━━━━━━━━━━━━━\n`;
-                content += `❌ 문제 ${idx + 1}\n`;
+                const separator = window.i18n?.t('premium.separator') || '━━━━━━━━━━━━━━━━━━━━';
+                const problemLabel = window.i18n?.t('premium.problem') || '❌ Problem {number}';
+                const yourAnswerLabel = window.i18n?.t('premium.yourAnswer') || 'Your Answer:';
+                const answerLabel = window.i18n?.t('premium.answer') || 'Answer:';
+                const explanationLabel = window.i18n?.t('premium.explanation') || '💡 Explanation:';
+
+                content += `${separator}\n`;
+                content += `${problemLabel.replace('{number}', idx + 1)}\n`;
                 content += `${q.question}\n\n`;
-                content += `당신의 답: ${q.options[item.userAnswer]}\n`;
-                content += `정답: ${q.options[q.answer]}\n\n`;
-                content += `💡 해설:\n${q.explanation}\n\n`;
+                content += `${yourAnswerLabel} ${q.options[item.userAnswer]}\n`;
+                content += `${answerLabel} ${q.options[q.answer]}\n\n`;
+                content += `${explanationLabel}\n${q.explanation}\n\n`;
             });
 
-            content += `━━━━━━━━━━━━━━━━━━━━\n`;
-            content += `📊 카테고리별 분석\n\n`;
-            
+            const separator = window.i18n?.t('premium.separator') || '━━━━━━━━━━━━━━━━━━━━';
+            const categoryLabel = window.i18n?.t('premium.categoryAnalysis') || '📊 Category Analysis';
+            content += `${separator}\n${categoryLabel}\n\n`;
+
             // 카테고리별 분석
             const categoryStats = {};
             this.userAnswers.forEach(item => {
@@ -464,13 +481,13 @@ class DevQuizApp {
             });
 
             const catNames = {
-                javascript: 'JavaScript',
-                python: 'Python',
-                web: '웹개발',
-                database: 'DB/SQL',
-                cs: 'CS기초',
-                git: 'Git',
-                devops: 'DevOps'
+                javascript: window.i18n?.t('premium.categories.javascript') || 'JavaScript',
+                python: window.i18n?.t('premium.categories.python') || 'Python',
+                web: window.i18n?.t('premium.categories.web') || 'Web Development',
+                database: window.i18n?.t('premium.categories.database') || 'DB/SQL',
+                cs: window.i18n?.t('premium.categories.cs') || 'CS Fundamentals',
+                git: window.i18n?.t('premium.categories.git') || 'Git',
+                devops: window.i18n?.t('premium.categories.devops') || 'DevOps'
             };
 
             for (const [cat, stats] of Object.entries(categoryStats)) {
@@ -478,15 +495,17 @@ class DevQuizApp {
                 content += `${catNames[cat] || cat}: ${stats.correct}/${stats.total} (${pct}%)\n`;
             }
 
-            content += `\n💪 추천 학습 분야:\n`;
+            const recommendLabel = window.i18n?.t('premium.recommendations') || '💪 Recommended Learning Areas:';
+            content += `\n${recommendLabel}\n`;
             const weakCategories = Object.entries(categoryStats)
                 .filter(([_, stats]) => (stats.correct / stats.total) < 0.7)
                 .map(([cat, _]) => catNames[cat] || cat);
-            
+
             if (weakCategories.length > 0) {
                 content += weakCategories.join(', ');
             } else {
-                content += '전체적으로 균형 잡힌 실력입니다!';
+                const balancedMsg = window.i18n?.t('premium.balanced') || 'Your skills are well-balanced overall!';
+                content += balancedMsg;
             }
         }
 

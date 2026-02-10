@@ -11,7 +11,13 @@
     "prompt": "Select a category...",
     "selectCategory": "Select Category",
     "selectDifficulty": "Difficulty:",
-    "startButton": "$ ./start_quiz"
+    "startButton": "$ ./start_quiz",
+    "dailyChallenge": "Today's Challenge",
+    "statsDashboard": "📊 My Records",
+    "statsTotalGames": "Total Games",
+    "statsHighScore": "High Score",
+    "statsStreak": "Streak",
+    "statsAccuracy": "Accuracy"
   },
   "categories": {
     "all": "All",
@@ -65,17 +71,48 @@
   "language": {
     "select": "Select Language"
   },
-  "start": {
-    "dailyChallenge": "Today's Challenge",
-    "statsDashboard": "📊 My Records",
-    "statsTotalGames": "Total Games",
-    "statsHighScore": "High Score",
-    "statsStreak": "Streak",
-    "statsAccuracy": "Accuracy"
+  "grades": {
+    "S": "🎉 Perfect! You're at senior developer level.",
+    "A": "👏 Excellent! You have solid fundamentals.",
+    "B": "👍 Good! A bit more study and you'll reach grade A!",
+    "C": "📚 You have the basics, but need more learning.",
+    "D": "💪 You have a long way to go, but don't give up!",
+    "F": "📖 Start from the basics! But remember, getting started is half the battle!"
+  },
+  "daily": {
+    "completed": "Today's challenge complete!",
+    "streakDays": "🔥 {count} days",
+    "alreadyCompleted": "You've already completed today's challenge! Try again tomorrow.",
+    "appInitError": "App initialization error:"
+  },
+  "share": {
+    "title": "Developer Quiz",
+    "text": "🖥️ Developer Quiz Results\n\n✅ Correct: {correct}/{total}\n📊 Score: {score}\n🏆 Grade: {grade}\n\nTest your coding skills!",
+    "copied": "Result copied to clipboard!"
   },
   "ads": {
-    "banner": "Advertisement",
-    "interstitial": "Ad",
-    "close": "Close"
+    "close": "Close",
+    "closeCountdown": "Close ({count})"
+  },
+  "premium": {
+    "perfect": "🎉 Perfect! You got all the questions right!\n\nCongratulations! You're a truly outstanding developer.\nTry challenging higher difficulty levels!",
+    "wrongNotes": "📚 Wrong Answer Notes",
+    "problem": "❌ Problem {number}",
+    "yourAnswer": "Your Answer:",
+    "answer": "Answer:",
+    "explanation": "💡 Explanation:",
+    "separator": "━━━━━━━━━━━━━━━━━━━━",
+    "categoryAnalysis": "📊 Category Analysis",
+    "recommendations": "💪 Recommended Learning Areas:",
+    "balanced": "Your skills are well-balanced overall!",
+    "categories": {
+      "javascript": "JavaScript",
+      "python": "Python",
+      "web": "Web Development",
+      "database": "DB/SQL",
+      "cs": "CS Fundamentals",
+      "git": "Git",
+      "devops": "DevOps"
+    }
   }
 }
