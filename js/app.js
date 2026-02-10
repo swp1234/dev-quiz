@@ -69,7 +69,7 @@ class DevQuizApp {
         this.questions = this.shuffle(filtered).slice(0, 10);
         
         if (this.questions.length < 5) {
-            alert('선택한 조건의 문제가 부족합니다. 다른 조건을 선택해주세요.');
+            alert(window.i18n?.t('alerts.notEnoughQuestions') || 'Not enough questions for the selected criteria. Please choose different options.');
             return;
         }
 
