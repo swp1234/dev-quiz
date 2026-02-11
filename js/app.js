@@ -12,6 +12,7 @@ class DevQuizApp {
 
     init() {
         try {
+            this.initTheme();
             this.setupCategoryButtons();
             this.setupDifficultyButtons();
             this.setupStartButton();
@@ -20,9 +21,19 @@ class DevQuizApp {
             this.setupPremiumButton();
             this.renderStatsDashboard();
             this.registerServiceWorker();
+            this.setupThemeToggle();
         } catch (e) {
             const errorMsg = window.i18n?.t('daily.appInitError') || 'App initialization error:';
             console.error(errorMsg, e);
+        }
+    }
+
+    initTheme() {
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            themeToggle.textContent = savedTheme === 'light' ? '🌙' : '☀️';
         }
     }
 
@@ -519,6 +530,19 @@ class DevQuizApp {
             navigator.serviceWorker.register('sw.js')
                 .then(() => console.log('Service Worker registered'))
                 .catch(err => console.log('SW registration failed:', err));
+        }
+    }
+
+    setupThemeToggle() {
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const current = document.documentElement.getAttribute('data-theme');
+                const next = current === 'light' ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', next);
+                localStorage.setItem('theme', next);
+                themeToggle.textContent = next === 'light' ? '🌙' : '☀️';
+            });
         }
     }
 }

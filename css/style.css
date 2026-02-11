@@ -16,6 +16,24 @@
     --border-color: #3c3c3c;
 }
 
+/* Light Mode Override */
+[data-theme="light"] {
+    --primary: #27ae60;
+    --primary-dark: #1e8449;
+    --primary-light: #2ecc71;
+    --bg-dark: #f5f5fa;
+    --bg-terminal: #ffffff;
+    --bg-card: #ffffff;
+    --text-primary: #1a1a2e;
+    --text-secondary: #5a5a70;
+    --accent-blue: #569cd6;
+    --accent-orange: #ce9178;
+    --accent-yellow: #dcdcaa;
+    --accent-purple: #c586c0;
+    --accent-green: #6a9955;
+    --border-color: #e0e0e0;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -116,6 +134,10 @@ body {
     margin-bottom: 10px;
 }
 
+[data-theme="light"] .ad-banner {
+    border: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
 .ad-banner::before {
     content: '/* 광고 영역 */';
 }
@@ -133,6 +155,11 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
+}
+
+[data-theme="light"] .terminal-header {
+    background: #f0f0f0;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .window-controls {
@@ -165,6 +192,11 @@ body {
     border-radius: 0 0 8px 8px;
     padding: 20px;
     min-height: 500px;
+}
+
+[data-theme="light"] .terminal-body {
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 /* 시작 화면 */
@@ -218,6 +250,14 @@ body {
     min-height: 80px;
     touch-action: manipulation;
     position: relative;
+}
+
+[data-theme="light"] .category-btn {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .category-btn:hover {
+    background: rgba(39, 174, 96, 0.08);
 }
 
 .category-btn:hover {
@@ -408,6 +448,11 @@ body {
     overflow-x: auto;
 }
 
+[data-theme="light"] .code-block {
+    background: #f8f8f8;
+    border: 1px solid var(--border-color);
+}
+
 .code-block:empty {
     display: none;
 }
@@ -451,6 +496,14 @@ body {
     align-items: center;
     touch-action: manipulation;
     position: relative;
+}
+
+[data-theme="light"] .option-btn {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .option-btn:hover:not(:disabled) {
+    background: rgba(39, 174, 96, 0.08);
 }
 
 .option-btn:hover:not(:disabled) {
@@ -499,6 +552,10 @@ body {
     border: 1px solid var(--border-color);
 }
 
+[data-theme="light"] .result-stats {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
 .stat-item {
     text-align: center;
 }
@@ -529,6 +586,11 @@ body {
     margin-bottom: 20px;
     font-size: 0.9rem;
     color: var(--text-primary);
+}
+
+[data-theme="light"] .result-message {
+    border: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 /* 프리미엄 버튼 */
@@ -757,6 +819,10 @@ body {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: 8px;
+}
+
+[data-theme="light"] .stats-dashboard {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .stats-title {
