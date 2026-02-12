@@ -235,6 +235,9 @@ class DevQuizApp {
         document.getElementById('grade').textContent = grade;
         document.getElementById('result-message').textContent = message;
 
+        // Show social share buttons
+        this.showShareButtons();
+
         // 일일 챌린지 완료 처리
         if (this.isDailyChallenge) {
             const today = new Date().toDateString();
@@ -386,6 +389,27 @@ class DevQuizApp {
         document.getElementById('share-btn').addEventListener('click', () => {
             this.shareResult();
         });
+
+        // Social share buttons
+        document.getElementById('shareTwitterBtn')?.addEventListener('click', () => {
+            const text = document.title + ' - ' + window.location.href;
+            window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
+            if (typeof gtag !== 'undefined') gtag('event', 'share', { method: 'twitter' });
+        });
+
+        document.getElementById('shareUrlBtn')?.addEventListener('click', () => {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                const btn = document.getElementById('shareUrlBtn');
+                btn.textContent = '✅ Copied!';
+                setTimeout(() => { btn.innerHTML = '📋 Copy URL'; }, 2000);
+            });
+            if (typeof gtag !== 'undefined') gtag('event', 'share', { method: 'url_copy' });
+        });
+    }
+
+    showShareButtons() {
+        const shareSection = document.getElementById('share-section');
+        if (shareSection) shareSection.style.display = 'flex';
     }
 
     shareResult() {

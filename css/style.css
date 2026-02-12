@@ -856,6 +856,50 @@ body {
     margin-top: 2px;
 }
 
+/* Social Share Buttons */
+.share-section {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+.share-btn {
+    min-height: 44px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: inherit;
+}
+.share-btn:focus-visible {
+    outline: 3px solid var(--primary, #27ae60);
+    outline-offset: 2px;
+}
+.share-twitter {
+    background: #000;
+    color: #fff;
+}
+.share-url {
+    background: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.8);
+    border: 1px solid rgba(255,255,255,0.15);
+}
+[data-theme="light"] .share-url {
+    background: rgba(0,0,0,0.05);
+    color: #333;
+    border-color: rgba(0,0,0,0.1);
+}
+.share-btn:hover {
+    transform: translateY(-1px);
+}
+
 /* Recommendations Section */
 .recommendations-section { margin: 24px 0 0; padding: 0 16px; }
 .rec-title { font-size: 15px; font-weight: 700; color: rgba(255,255,255,0.5); margin-bottom: 12px; text-align: center; letter-spacing: 0.5px; }
