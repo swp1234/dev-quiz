@@ -88,7 +88,8 @@
   "share": {
     "title": "개발자 퀴즈",
     "text": "🖥️ 개발자 퀴즈 결과\n\n✅ 정답: {correct}/{total}\n📊 점수: {score}\n🏆 등급: {grade}\n\n당신의 개발 실력을 테스트해보세요!",
-    "copied": "결과가 클립보드에 복사되었습니다!"
+    "copied": "✅ 복사됨!",
+    "copyUrl": "📋 URL 복사"
   },
   "ads": {
     "close": "닫기",

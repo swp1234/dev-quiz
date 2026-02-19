@@ -7,11 +7,12 @@
     "title": "dev-quiz — bash"
   },
   "start": {
-    "asciiTitle": "🖥️  Developer Quiz  🖥️",
-    "prompt": "カテゴリーを選択...",
-    "selectCategory": "カテゴリーを選択",
-    "selectDifficulty": "難易度:",
-    "startButton": "$ ./start_quiz"
+    "dailyChallenge": "今日のチャレンジ",
+    "statsDashboard": "📊 マイレコード",
+    "statsTotalGames": "総ゲーム数",
+    "statsHighScore": "ハイスコア",
+    "statsStreak": "連続日数",
+    "statsAccuracy": "正解率"
   },
   "categories": {
     "all": "すべて",
@@ -31,7 +32,7 @@
   },
   "quiz": {
     "question": "// 問題",
-    "score": "スコア:",
+    "score": "Score:",
     "completed": "クイズ完了！"
   },
   "results": {
@@ -65,17 +66,13 @@
   "language": {
     "select": "言語を選択"
   },
-  "start": {
-    "dailyChallenge": "今日のチャレンジ",
-    "statsDashboard": "📊 マイレコード",
-    "statsTotalGames": "総ゲーム数",
-    "statsHighScore": "ハイスコア",
-    "statsStreak": "連続日数",
-    "statsAccuracy": "正解率"
-  },
   "ads": {
     "banner": "広告",
     "interstitial": "広告",
     "close": "閉じる"
+  },
+  "share": {
+    "copied": "✅ コピー済み!",
+    "copyUrl": "📋 URL コピー"
   }
 }

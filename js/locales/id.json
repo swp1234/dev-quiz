@@ -7,11 +7,12 @@
     "title": "dev-quiz — bash"
   },
   "start": {
-    "asciiTitle": "🖥️  Kuis Pengembang  🖥️",
-    "prompt": "Pilih kategori...",
-    "selectCategory": "Pilih Kategori",
-    "selectDifficulty": "Tingkat Kesulitan:",
-    "startButton": "$ ./start_quiz"
+    "dailyChallenge": "Tantangan Harian",
+    "statsDashboard": "📊 Rekor Saya",
+    "statsTotalGames": "Total Permainan",
+    "statsHighScore": "Skor Tertinggi",
+    "statsStreak": "Seri",
+    "statsAccuracy": "Akurasi"
   },
   "categories": {
     "all": "Semua",
@@ -31,7 +32,7 @@
   },
   "quiz": {
     "question": "// Pertanyaan",
-    "score": "Skor:",
+    "score": "Score:",
     "completed": "KUIS SELESAI!"
   },
   "results": {
@@ -65,17 +66,13 @@
   "language": {
     "select": "Pilih Bahasa"
   },
-  "start": {
-    "dailyChallenge": "Tantangan Harian",
-    "statsDashboard": "📊 Rekor Saya",
-    "statsTotalGames": "Total Permainan",
-    "statsHighScore": "Skor Tertinggi",
-    "statsStreak": "Seri",
-    "statsAccuracy": "Akurasi"
-  },
   "ads": {
     "banner": "Iklan",
     "interstitial": "Iklan",
     "close": "Tutup"
+  },
+  "share": {
+    "copied": "✅ Disalin!",
+    "copyUrl": "📋 Salin URL"
   }
 }

@@ -7,11 +7,12 @@
     "title": "dev-quiz — bash"
   },
   "start": {
-    "asciiTitle": "🖥️  डेवलपर क्विज़  🖥️",
-    "prompt": "एक श्रेणी चुनें...",
-    "selectCategory": "श्रेणी चुनें",
-    "selectDifficulty": "कठिनाई:",
-    "startButton": "$ ./start_quiz"
+    "dailyChallenge": "दैनिक चुनौती",
+    "statsDashboard": "📊 मेरे रिकॉर्ड",
+    "statsTotalGames": "कुल गेम",
+    "statsHighScore": "सर्वोच्च स्कोर",
+    "statsStreak": "स्ट्रीक",
+    "statsAccuracy": "सटीकता"
   },
   "categories": {
     "all": "सभी",
@@ -31,7 +32,7 @@
   },
   "quiz": {
     "question": "// प्रश्न",
-    "score": "स्कोर:",
+    "score": "Score:",
     "completed": "क्विज़ पूर्ण!"
   },
   "results": {
@@ -65,17 +66,13 @@
   "language": {
     "select": "भाषा चुनें"
   },
-  "start": {
-    "dailyChallenge": "दैनिक चुनौती",
-    "statsDashboard": "📊 मेरे रिकॉर्ड",
-    "statsTotalGames": "कुल गेम",
-    "statsHighScore": "सर्वोच्च स्कोर",
-    "statsStreak": "स्ट्रीक",
-    "statsAccuracy": "सटीकता"
-  },
   "ads": {
     "banner": "विज्ञापन",
     "interstitial": "विज्ञापन",
     "close": "बंद करें"
+  },
+  "share": {
+    "copied": "✅ कॉपी किया!",
+    "copyUrl": "📋 URL कॉपी करें"
   }
 }

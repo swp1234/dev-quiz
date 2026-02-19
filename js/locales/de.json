@@ -7,11 +7,12 @@
     "title": "dev-quiz — bash"
   },
   "start": {
-    "asciiTitle": "🖥️  Developer Quiz  🖥️",
-    "prompt": "Kategorie auswählen...",
-    "selectCategory": "Kategorie auswählen",
-    "selectDifficulty": "Schwierigkeit:",
-    "startButton": "$ ./start_quiz"
+    "dailyChallenge": "Tägliche Herausforderung",
+    "statsDashboard": "📊 Meine Rekorde",
+    "statsTotalGames": "Gesamte Spiele",
+    "statsHighScore": "Höchste Punktzahl",
+    "statsStreak": "Serie",
+    "statsAccuracy": "Genauigkeit"
   },
   "categories": {
     "all": "Alle",
@@ -31,7 +32,7 @@
   },
   "quiz": {
     "question": "// Frage",
-    "score": "Punktzahl:",
+    "score": "Score:",
     "completed": "QUIZ ABGESCHLOSSEN!"
   },
   "results": {
@@ -65,17 +66,13 @@
   "language": {
     "select": "Sprache auswählen"
   },
-  "start": {
-    "dailyChallenge": "Tägliche Herausforderung",
-    "statsDashboard": "📊 Meine Rekorde",
-    "statsTotalGames": "Gesamte Spiele",
-    "statsHighScore": "Höchste Punktzahl",
-    "statsStreak": "Serie",
-    "statsAccuracy": "Genauigkeit"
-  },
   "ads": {
     "banner": "Werbung",
     "interstitial": "Anzeige",
     "close": "Schließen"
+  },
+  "share": {
+    "copied": "✅ Kopiert!",
+    "copyUrl": "📋 URL kopieren"
   }
 }

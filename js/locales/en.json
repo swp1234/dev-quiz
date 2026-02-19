@@ -88,7 +88,8 @@
   "share": {
     "title": "Developer Quiz",
     "text": "🖥️ Developer Quiz Results\n\n✅ Correct: {correct}/{total}\n📊 Score: {score}\n🏆 Grade: {grade}\n\nTest your coding skills!",
-    "copied": "Result copied to clipboard!"
+    "copied": "✅ Copied!",
+    "copyUrl": "📋 Copy URL"
   },
   "ads": {
     "close": "Close",

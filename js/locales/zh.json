@@ -7,11 +7,12 @@
     "title": "dev-quiz — bash"
   },
   "start": {
-    "asciiTitle": "🖥️  开发者测验  🖥️",
-    "prompt": "选择一个类别...",
-    "selectCategory": "选择类别",
-    "selectDifficulty": "难度:",
-    "startButton": "$ ./start_quiz"
+    "dailyChallenge": "每日挑战",
+    "statsDashboard": "📊 我的记录",
+    "statsTotalGames": "总游戏数",
+    "statsHighScore": "最高分",
+    "statsStreak": "连续天数",
+    "statsAccuracy": "准确度"
   },
   "categories": {
     "all": "全部",
@@ -31,7 +32,7 @@
   },
   "quiz": {
     "question": "// 问题",
-    "score": "分数:",
+    "score": "Score:",
     "completed": "测验完成!"
   },
   "results": {
@@ -65,17 +66,13 @@
   "language": {
     "select": "选择语言"
   },
-  "start": {
-    "dailyChallenge": "每日挑战",
-    "statsDashboard": "📊 我的记录",
-    "statsTotalGames": "总游戏数",
-    "statsHighScore": "最高分",
-    "statsStreak": "连续天数",
-    "statsAccuracy": "准确度"
-  },
   "ads": {
     "banner": "广告区域",
     "interstitial": "广告",
     "close": "关闭"
+  },
+  "share": {
+    "copied": "✅ 已复制!",
+    "copyUrl": "📋 复制链接"
   }
 }

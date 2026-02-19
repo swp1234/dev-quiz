@@ -7,11 +7,12 @@
     "title": "dev-quiz — bash"
   },
   "start": {
-    "asciiTitle": "🖥️  Викторина разработчика  🖥️",
-    "prompt": "Выберите категорию...",
-    "selectCategory": "Выберите категорию",
-    "selectDifficulty": "Сложность:",
-    "startButton": "$ ./start_quiz"
+    "dailyChallenge": "Ежедневный вызов",
+    "statsDashboard": "📊 Мои Рекорды",
+    "statsTotalGames": "Всего Игр",
+    "statsHighScore": "Наивысший Результат",
+    "statsStreak": "Серия",
+    "statsAccuracy": "Точность"
   },
   "categories": {
     "all": "Все",
@@ -31,7 +32,7 @@
   },
   "quiz": {
     "question": "// Вопрос",
-    "score": "Баллы:",
+    "score": "Score:",
     "completed": "ВИКТОРИНА ЗАВЕРШЕНА!"
   },
   "results": {
@@ -65,17 +66,13 @@
   "language": {
     "select": "Выберите язык"
   },
-  "start": {
-    "dailyChallenge": "Ежедневный вызов",
-    "statsDashboard": "📊 Мои Рекорды",
-    "statsTotalGames": "Всего Игр",
-    "statsHighScore": "Наивысший Результат",
-    "statsStreak": "Серия",
-    "statsAccuracy": "Точность"
-  },
   "ads": {
     "banner": "Реклама",
     "interstitial": "Объявление",
     "close": "Закрыть"
+  },
+  "share": {
+    "copied": "✅ Скопировано!",
+    "copyUrl": "📋 Копировать URL"
   }
 }

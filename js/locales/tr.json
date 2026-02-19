@@ -7,11 +7,12 @@
     "title": "dev-quiz — bash"
   },
   "start": {
-    "asciiTitle": "🖥️  Geliştirici Sınav  🖥️",
-    "prompt": "Bir kategori seç...",
-    "selectCategory": "Kategori Seç",
-    "selectDifficulty": "Zorluk:",
-    "startButton": "$ ./start_quiz"
+    "dailyChallenge": "Günlük Meydan Okuma",
+    "statsDashboard": "📊 Benim Kayıtları",
+    "statsTotalGames": "Toplam Oyunlar",
+    "statsHighScore": "En Yüksek Puan",
+    "statsStreak": "Dizi",
+    "statsAccuracy": "Doğruluk"
   },
   "categories": {
     "all": "Tümü",
@@ -31,7 +32,7 @@
   },
   "quiz": {
     "question": "// Soru",
-    "score": "Puan:",
+    "score": "Score:",
     "completed": "SINAV TAMAMLANDI!"
   },
   "results": {
@@ -65,17 +66,13 @@
   "language": {
     "select": "Dil Seç"
   },
-  "start": {
-    "dailyChallenge": "Günlük Meydan Okuma",
-    "statsDashboard": "📊 Benim Kayıtları",
-    "statsTotalGames": "Toplam Oyunlar",
-    "statsHighScore": "En Yüksek Puan",
-    "statsStreak": "Dizi",
-    "statsAccuracy": "Doğruluk"
-  },
   "ads": {
     "banner": "Reklam",
     "interstitial": "Reklam",
     "close": "Kapat"
+  },
+  "share": {
+    "copied": "✅ Kopyalandı!",
+    "copyUrl": "📋 URL Kopyala"
   }
 }

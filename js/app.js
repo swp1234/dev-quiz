@@ -111,8 +111,8 @@ class DevQuizApp {
         // 헤더 업데이트
         document.getElementById('question-num').textContent = 
             `[${this.currentQuestion + 1}/${this.questions.length}]`;
-        document.getElementById('score-display').textContent = 
-            `Score: ${this.score}`;
+        document.getElementById('score-display').textContent =
+            `${window.i18n?.t('quiz.score') || 'Score:'} ${this.score}`;
         
         // 프로그레스 바
         const progress = ((this.currentQuestion) / this.questions.length) * 100;
@@ -400,8 +400,8 @@ class DevQuizApp {
         document.getElementById('shareUrlBtn')?.addEventListener('click', () => {
             navigator.clipboard.writeText(window.location.href).then(() => {
                 const btn = document.getElementById('shareUrlBtn');
-                btn.textContent = '✅ Copied!';
-                setTimeout(() => { btn.innerHTML = '📋 Copy URL'; }, 2000);
+                btn.textContent = window.i18n?.t('share.copied') || '✅ Copied!';
+                setTimeout(() => { btn.innerHTML = window.i18n?.t('share.copyUrl') || '📋 Copy URL'; }, 2000);
             });
             if (typeof gtag !== 'undefined') gtag('event', 'share', { method: 'url_copy' });
         });
