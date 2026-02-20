@@ -933,6 +933,15 @@ body {
   color: rgba(255,255,255,0.7);
 }
 
+/* Light mode: rec-section & back-link overrides */
+[data-theme="light"] .rec-card { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.08); }
+[data-theme="light"] .rec-card:hover { background: rgba(0,0,0,0.06); }
+[data-theme="light"] .rec-title { color: rgba(26,26,46,0.5); }
+[data-theme="light"] .rec-name { color: #1a1a2e; }
+[data-theme="light"] .rec-desc { color: #555; }
+[data-theme="light"] .back-link { color: rgba(26,26,46,0.4); }
+[data-theme="light"] .back-link:hover { color: rgba(26,26,46,0.7); }
+
 /* === Accessibility Improvements === */
 button:focus-visible,a:focus-visible,input:focus-visible,[role="button"]:focus-visible{outline:3px solid #27ae60;outline-offset:2px;}
 button,a[href],input[type="button"],input[type="submit"],[role="button"]{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;}
