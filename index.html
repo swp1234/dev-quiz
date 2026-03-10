@@ -108,7 +108,7 @@
       },
       "inLanguage": ["ko", "en", "ja", "es", "pt", "zh", "id", "tr", "de", "fr", "hi", "ru"],
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
-      "featureList": "8 Categories, 100 Questions, Difficulty Filter, Daily Challenge, Performance Analysis, Wrong Answer Explanations",
+      "featureList": "8 Categories, 100 Questions, Difficulty Filter, Daily Challenge, Streak System, Sound Effects, Performance Analysis, Wrong Answer Explanations",
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.6",
@@ -133,6 +133,10 @@
     <a href="#main-content" class="skip-link" data-i18n="app.skipLink">Skip to content</a>
 
     <!-- 테마 토글 -->
+    <!-- Sound Toggle -->
+    <button class="sound-toggle" id="sound-toggle" onclick="if(window.sfx)window.sfx.resume();const enabled=window.sfx?window.sfx.toggle():false;this.textContent=enabled?'🔊':'🔇';" title="Toggle Sound">🔊</button>
+    <style>.sound-toggle{position:fixed;top:12px;right:92px;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.08);color:#fff;font-size:18px;cursor:pointer;z-index:100;display:flex;align-items:center;justify-content:center;transition:background 0.2s;backdrop-filter:blur(8px)}.sound-toggle:hover{background:rgba(255,255,255,0.2)}.sound-toggle:active{transform:scale(0.95)}[data-theme="light"] .sound-toggle{background:rgba(0,0,0,0.06);border-color:rgba(0,0,0,0.12);color:#333}</style>
+
     <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">☀️</button>
     
     <!-- Language Selector -->
@@ -261,6 +265,7 @@
             <section class="quiz-screen hidden" id="quiz-screen">
                 <div class="quiz-header">
                     <span class="question-num" id="question-num">[1/10]</span>
+                    <span class="quiz-streak hidden" id="quiz-streak">0x</span>
                     <span class="score-display" id="score-display">Score: 0</span>
                 </div>
                 <div class="progress-bar">
@@ -293,6 +298,10 @@
                     <div class="stat-item">
                         <span class="stat-label" data-i18n="results.grade">등급</span>
                         <span class="stat-value" id="grade">F</span>
+                    </div>
+                    <div class="stat-item hidden">
+                        <span class="stat-label">Best Streak</span>
+                        <span class="stat-value" id="streak-result">0</span>
                     </div>
                 </div>
                 <div class="result-message" id="result-message"></div>
@@ -351,8 +360,10 @@
         </footer>
     </div>
 
+    <script src="js/sound-engine.js"></script>
     <script src="js/data.js"></script>
     <script src="js/i18n.js"></script>
+    <script src="/portal/js/haptic.js"></script>
     <script src="js/app.js"></script>
     <script src="/portal/js/cross-promo.js" defer></script>
 <script>

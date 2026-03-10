@@ -392,6 +392,16 @@ body {
     color: var(--accent-blue);
 }
 
+.quiz-streak {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #f39c12;
+    text-shadow: 0 0 8px rgba(243, 156, 18, 0.4);
+    font-family: 'Courier New', monospace;
+}
+
+.quiz-streak.hidden { display: none; }
+
 .score-display {
     color: var(--primary);
 }

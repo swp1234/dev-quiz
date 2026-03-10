@@ -7,6 +7,8 @@ class DevQuizApp {
         this.selectedCategory = 'all';
         this.selectedDifficulty = 'all';
         this.userAnswers = [];
+        this.streak = 0;
+        this.maxStreak = 0;
         this.init();
     }
 
@@ -88,10 +90,13 @@ class DevQuizApp {
         this.currentQuestion = 0;
         this.score = 0;
         this.userAnswers = [];
+        this.streak = 0;
+        this.maxStreak = 0;
 
         document.getElementById('start-screen').classList.add('hidden');
         document.getElementById('quiz-screen').classList.remove('hidden');
         document.getElementById('result-screen').classList.add('hidden');
+        this.updateStreakDisplay();
 
         this.showQuestion();
     }
@@ -169,17 +174,31 @@ class DevQuizApp {
             buttons[question.answer].classList.add('correct');
         }
 
-        // 점수 계산
-        if (index === question.answer) {
+        // 점수 계산 + dopamine feedback
+        const isCorrect = index === question.answer;
+        if (isCorrect) {
             const points = { easy: 10, normal: 15, hard: 20 };
             this.score += points[question.difficulty] || 10;
+            this.streak++;
+            if (this.streak > this.maxStreak) this.maxStreak = this.streak;
+            if (window.sfx) window.sfx.play('correct');
+            if (typeof Haptic !== 'undefined') Haptic.light();
+            if (this.streak >= 3) {
+                this.showFloatingText(this.streak + ' STREAK!', '#f39c12');
+            }
+        } else {
+            this.streak = 0;
+            if (window.sfx) window.sfx.play('wrong');
+            if (typeof Haptic !== 'undefined') Haptic.medium();
+            this.shakeElement(document.querySelector('.question-block'));
         }
+        this.updateStreakDisplay();
 
         // 사용자 답변 저장
         this.userAnswers.push({
             question: question,
             userAnswer: index,
-            isCorrect: index === question.answer
+            isCorrect: isCorrect
         });
 
         // 다음 문제로
@@ -234,6 +253,22 @@ class DevQuizApp {
 
         document.getElementById('grade').textContent = grade;
         document.getElementById('result-message').textContent = message;
+
+        // Dopamine feedback based on grade
+        if (percentage >= 80) {
+            this.spawnConfetti();
+            if (window.sfx) window.sfx.play('grade_s');
+            if (typeof Haptic !== 'undefined') Haptic.success();
+        } else if (percentage >= 60) {
+            if (window.sfx) window.sfx.play('complete');
+        }
+
+        // Show max streak in result
+        const streakResult = document.getElementById('streak-result');
+        if (streakResult && this.maxStreak >= 3) {
+            streakResult.textContent = this.maxStreak;
+            streakResult.parentElement.classList.remove('hidden');
+        }
 
         // Show social share buttons
         this.showShareButtons();
@@ -549,6 +584,51 @@ class DevQuizApp {
         document.getElementById('premium-result').scrollIntoView({ behavior: 'smooth' });
     }
 
+    updateStreakDisplay() {
+        const el = document.getElementById('quiz-streak');
+        if (!el) return;
+        if (this.streak >= 2) {
+            el.textContent = this.streak + 'x';
+            el.classList.remove('hidden');
+            el.style.animation = 'none';
+            el.offsetHeight;
+            el.style.animation = 'streakPop 0.3s ease';
+        } else {
+            el.classList.add('hidden');
+        }
+    }
+
+    showFloatingText(text, color = '#2ecc71') {
+        const el = document.createElement('div');
+        el.textContent = text;
+        el.style.cssText = `position:fixed;top:35%;left:50%;transform:translateX(-50%);font-size:28px;font-weight:bold;color:${color};z-index:9999;pointer-events:none;text-shadow:0 0 10px ${color}40;opacity:1;transition:all 0.8s ease-out;`;
+        document.body.appendChild(el);
+        requestAnimationFrame(() => { el.style.top = '25%'; el.style.opacity = '0'; });
+        setTimeout(() => el.remove(), 1000);
+    }
+
+    shakeElement(el) {
+        if (!el) return;
+        el.style.animation = 'dq-shake 0.4s ease';
+        setTimeout(() => { el.style.animation = ''; }, 450);
+    }
+
+    spawnConfetti() {
+        const colors = ['#e74c3c', '#3498db', '#2ecc71', '#f39c12', '#9b59b6', '#1abc9c'];
+        for (let i = 0; i < 30; i++) {
+            const p = document.createElement('div');
+            p.style.cssText = `position:fixed;width:8px;height:8px;border-radius:${Math.random()>.5?'50%':'0'};pointer-events:none;z-index:9999;background:${colors[i%colors.length]};left:${50+(Math.random()-.5)*60}%;top:40%;opacity:1;transition:all 1s ease-out;`;
+            document.body.appendChild(p);
+            const tx = (Math.random() - 0.5) * 200;
+            const ty = -80 - Math.random() * 150;
+            requestAnimationFrame(() => {
+                p.style.transform = `translate(${tx}px, ${ty}px) rotate(${Math.random()*360}deg)`;
+                p.style.opacity = '0';
+            });
+            setTimeout(() => p.remove(), 1200);
+        }
+    }
+
     registerServiceWorker() {
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js')
@@ -570,6 +650,9 @@ class DevQuizApp {
         }
     }
 }
+
+// Shake + streak animations
+(function(){const s=document.createElement('style');s.textContent='@keyframes dq-shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}@keyframes streakPop{0%{transform:scale(1.3)}100%{transform:scale(1)}}';document.head.appendChild(s);})();
 
 // i18n 초기화 및 앱 시작
 (async function initI18n() {
