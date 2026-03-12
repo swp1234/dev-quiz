@@ -169,7 +169,7 @@ const quizData = [
             "서버 오류",
             "리소스를 찾을 수 없음",
             "권한 없음",
-            "리다이렉트"
+            "Redirect"
         ],
         answer: 1,
         explanation: "404 Not Found는 요청한 리소스를 서버에서 찾을 수 없음을 의미합니다. 가장 흔히 접하는 에러 코드입니다."
@@ -311,13 +311,13 @@ const quizData = [
         difficulty: "normal",
         question: "해시 테이블에서 충돌(Collision)을 해결하는 방법이 아닌 것은?",
         options: [
-            "체이닝",
-            "오픈 어드레싱",
-            "이중 해싱",
-            "버블 정렬"
+            "Chaining",
+            "Open Addressing",
+            "Double Hashing",
+            "Bubble Sort"
         ],
         answer: 3,
-        explanation: "버블 정렬은 정렬 알고리즘입니다. 해시 충돌 해결 방법으로는 체이닝, 오픈 어드레싱, 이중 해싱 등이 있습니다."
+        explanation: "Bubble Sort는 정렬 알고리즘입니다. 해시 충돌 해결 방법으로는 Chaining, Open Addressing, Double Hashing 등이 있습니다."
     },
     {
         category: "cs",
@@ -337,13 +337,13 @@ const quizData = [
         difficulty: "hard",
         question: "동적 프로그래밍(Dynamic Programming)의 핵심 원리는?",
         options: [
-            "분할 정복",
-            "메모이제이션",
-            "그리디",
-            "백트래킹"
+            "Divide and Conquer",
+            "Memoization",
+            "Greedy",
+            "Backtracking"
         ],
         answer: 1,
-        explanation: "동적 프로그래밍의 핵심은 메모이제이션으로, 이미 계산한 결과를 저장하여 중복 계산을 피합니다. 최적 부분 구조와 중복되는 부분 문제가 특징입니다."
+        explanation: "동적 프로그래밍의 핵심은 Memoization으로, 이미 계산한 결과를 저장하여 중복 계산을 피합니다. 최적 부분 구조와 중복되는 부분 문제가 특징입니다."
     },
 
     // Git 카테고리
