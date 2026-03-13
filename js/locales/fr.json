@@ -74,5 +74,12 @@
   "share": {
     "copied": "✅ Copié !",
     "copyUrl": "📋 Copier URL"
+  },
+  "related": {
+    "title": "À découvrir",
+    "quizApp": "Quiz",
+    "typingSpeed": "Vitesse de Frappe",
+    "iqTest": "Test de QI",
+    "reactionTest": "Test de Réaction"
   }
 }

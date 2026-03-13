@@ -74,5 +74,12 @@
   "share": {
     "copied": "✅ Copiado!",
     "copyUrl": "📋 Copiar URL"
+  },
+  "related": {
+    "title": "Explora más",
+    "quizApp": "Trivia",
+    "typingSpeed": "Velocidad de Tecleo",
+    "iqTest": "Test de IQ",
+    "reactionTest": "Test de Reacción"
   }
 }

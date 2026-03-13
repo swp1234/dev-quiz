@@ -74,5 +74,12 @@
   "share": {
     "copied": "✅ Скопировано!",
     "copyUrl": "📋 Копировать URL"
+  },
+  "related": {
+    "title": "Ещё интересное",
+    "quizApp": "Викторина",
+    "typingSpeed": "Скорость печати",
+    "iqTest": "Тест IQ",
+    "reactionTest": "Тест реакции"
   }
 }

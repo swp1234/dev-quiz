@@ -74,5 +74,12 @@
   "share": {
     "copied": "✅ Disalin!",
     "copyUrl": "📋 Salin URL"
+  },
+  "related": {
+    "title": "Jelajahi lainnya",
+    "quizApp": "Kuis",
+    "typingSpeed": "Kecepatan Mengetik",
+    "iqTest": "Tes IQ",
+    "reactionTest": "Tes Reaksi"
   }
 }

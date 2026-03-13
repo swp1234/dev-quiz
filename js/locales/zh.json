@@ -74,5 +74,12 @@
   "share": {
     "copied": "✅ 已复制!",
     "copyUrl": "📋 复制链接"
+  },
+  "related": {
+    "title": "探索更多",
+    "quizApp": "知识问答",
+    "typingSpeed": "打字速度",
+    "iqTest": "IQ测试",
+    "reactionTest": "反应测试"
   }
 }

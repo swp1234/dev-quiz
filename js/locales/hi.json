@@ -74,5 +74,12 @@
   "share": {
     "copied": "✅ कॉपी किया!",
     "copyUrl": "📋 URL कॉपी करें"
+  },
+  "related": {
+    "title": "और खोजें",
+    "quizApp": "क्विज़ ऐप",
+    "typingSpeed": "टाइपिंग स्पीड",
+    "iqTest": "IQ टेस्ट",
+    "reactionTest": "रिएक्शन टेस्ट"
   }
 }

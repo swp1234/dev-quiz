@@ -74,5 +74,12 @@
   "share": {
     "copied": "✅ コピー済み!",
     "copyUrl": "📋 URL コピー"
+  },
+  "related": {
+    "title": "もっと楽しむ",
+    "quizApp": "クイズアプリ",
+    "typingSpeed": "タイピング速度",
+    "iqTest": "IQテスト",
+    "reactionTest": "反応テスト"
   }
 }

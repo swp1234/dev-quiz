@@ -115,5 +115,12 @@
       "git": "Git",
       "devops": "DevOps"
     }
+  },
+  "related": {
+    "title": "더 많은 콘텐츠",
+    "quizApp": "퀴즈 앱",
+    "typingSpeed": "타이핑 속도",
+    "iqTest": "IQ 테스트",
+    "reactionTest": "반응 속도"
   }
 }

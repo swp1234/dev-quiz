@@ -74,5 +74,12 @@
   "share": {
     "copied": "✅ Kopyalandı!",
     "copyUrl": "📋 URL Kopyala"
+  },
+  "related": {
+    "title": "Daha fazla keşfet",
+    "quizApp": "Bilgi Yarışması",
+    "typingSpeed": "Yazma Hızı",
+    "iqTest": "IQ Testi",
+    "reactionTest": "Reaksiyon Testi"
   }
 }
