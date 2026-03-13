@@ -186,6 +186,9 @@ class DevQuizApp {
             if (this.streak >= 3) {
                 this.showFloatingText(this.streak + ' STREAK!', '#f39c12');
             }
+            if (this.streak === 5 || this.streak === 10) {
+                this.spawnConfetti();
+            }
         } else {
             this.streak = 0;
             if (window.sfx) window.sfx.play('wrong');
@@ -269,6 +272,26 @@ class DevQuizApp {
             streakResult.textContent = this.maxStreak;
             streakResult.parentElement.classList.remove('hidden');
         }
+
+        // Developer level badge based on score
+        let devLevel, devEmoji;
+        if (percentage >= 95) { devLevel = 'Staff Engineer'; devEmoji = '👑'; }
+        else if (percentage >= 85) { devLevel = 'Senior Dev'; devEmoji = '⭐'; }
+        else if (percentage >= 70) { devLevel = 'Mid-Level Dev'; devEmoji = '💻'; }
+        else if (percentage >= 50) { devLevel = 'Junior Dev'; devEmoji = '🌱'; }
+        else { devLevel = 'Intern'; devEmoji = '📚'; }
+
+        let levelBadge = document.getElementById('dev-level-badge');
+        if (!levelBadge) {
+            levelBadge = document.createElement('div');
+            levelBadge.id = 'dev-level-badge';
+            levelBadge.style.cssText = 'text-align:center;font-size:15px;font-weight:700;margin:8px 0;padding:6px 16px;border-radius:20px;display:inline-block;';
+            const gradeEl = document.getElementById('grade');
+            if (gradeEl && gradeEl.parentElement) gradeEl.parentElement.appendChild(levelBadge);
+        }
+        levelBadge.textContent = `${devEmoji} ${devLevel}`;
+        levelBadge.style.color = percentage >= 70 ? '#10b981' : percentage >= 50 ? '#f59e0b' : '#6b7280';
+        levelBadge.style.background = (percentage >= 70 ? '#10b981' : percentage >= 50 ? '#f59e0b' : '#6b7280') + '18';
 
         // Show social share buttons
         this.showShareButtons();
