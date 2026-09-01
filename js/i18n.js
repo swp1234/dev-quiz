@@ -1,89 +1,12 @@
-class I18n {
-    constructor() {
-        this.translations = {};
-        this.supportedLanguages = ['ko', 'en', 'ja', 'es', 'pt', 'zh', 'id', 'tr', 'de', 'fr', 'hi', 'ru'];
-        this.currentLang = this.detectLanguage();
-        document.documentElement.lang = this.currentLang;
-    }
-
-    detectLanguage() {
-        try {
-            const params = new URLSearchParams(window.location.search || '');
-            const urlLang = params.get('lang');
-            if (urlLang && this.supportedLanguages.includes(urlLang)) return urlLang;
-        } catch (e) {}
-        const savedLang = localStorage.getItem('app_language');
-        if (savedLang && this.supportedLanguages.includes(savedLang)) return savedLang;
-        const browserLang = (navigator.language || navigator.userLanguage).split('-')[0];
-        if (this.supportedLanguages.includes(browserLang)) return browserLang;
-        return 'en';
-    }
-
-    async loadTranslations(lang) {
-        try {
-            const response = await fetch(`js/locales/${lang}.json`);
-            if (!response.ok) throw new Error('Not found');
-            this.translations[lang] = await response.json();
-            return true;
-        } catch (e) {
-            if (lang !== 'en') return this.loadTranslations('en');
-            return false;
-        }
-    }
-
-    t(key) {
-        const keys = key.split('.');
-        let value = this.translations[this.currentLang];
-        for (const k of keys) {
-            if (value && value[k]) value = value[k];
-            else return key;
-        }
-        return value;
-    }
-
-    async setLanguage(lang) {
-        if (!this.supportedLanguages.includes(lang)) return false;
-        if (!this.translations[lang]) await this.loadTranslations(lang);
-        this.currentLang = lang;
-        localStorage.setItem('app_language', lang);
-        document.documentElement.lang = lang;
-        this.updateUI();
-        return true;
-    }
-
-    updateUI() {
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-            el.textContent = this.t(el.getAttribute('data-i18n'));
-        });
-        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-            el.placeholder = this.t(el.getAttribute('data-i18n-placeholder'));
-        });
-        document.title = this.t('app.title');
-        const meta = document.querySelector('meta[name="description"]');
-        if (meta) meta.content = this.t('app.description');
-    }
-
-    getCurrentLanguage() {
-        return this.currentLang;
-    }
-
-    getLanguageName(lang) {
-        const names = {
-            'ko': '한국어',
-            'en': 'English',
-            'ja': '日本語',
-            'es': 'Español',
-            'pt': 'Português',
-            'zh': '简体中文',
-            'id': 'Bahasa Indonesia',
-            'tr': 'Türkçe',
-            'de': 'Deutsch',
-            'fr': 'Français',
-            'hi': 'हिन्दी',
-            'ru': 'Русский'
-        };
-        return names[lang] || lang;
-    }
+class I18n{
+ constructor(){this.supportedLanguages=['ko','en','ja','es','pt','zh','id','tr','de','fr','hi','ru'];this.currentLang=this.detect();this.translations={}}
+ detect(){const q=new URLSearchParams(location.search).get('lang');if(this.supportedLanguages.includes(q))return q;try{const s=localStorage.getItem('dev_quiz_language');if(this.supportedLanguages.includes(s))return s}catch{}const b=(navigator.language||'en').split('-')[0];return this.supportedLanguages.includes(b)?b:'en'}
+ async load(lang){if(this.translations[lang])return;const r=await fetch(`/dev-quiz/js/locales/${lang}.json`);if(!r.ok)throw Error(`locale ${lang}: ${r.status}`);this.translations[lang]=await r.json()}
+ t(key){let value=this.translations[this.currentLang]||this.translations.en||{};for(const part of key.split('.'))value=value?.[part];return typeof value==='string'?value:key}
+ format(key,values={}){return Object.entries(values).reduce((text,[name,value])=>text.replaceAll(`{${name}}`,value),this.t(key))}
+ async setLanguage(lang){if(!this.supportedLanguages.includes(lang))return;try{await this.load(lang);this.currentLang=lang;localStorage.setItem('dev_quiz_language',lang)}catch{if(lang!=='en'){await this.load('en');this.currentLang='en'}}this.render()}
+ render(){document.documentElement.lang=this.currentLang;document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=this.t(el.dataset.i18n));const select=document.getElementById('language');if(select)select.value=this.currentLang;document.querySelectorAll('[data-target-slug]').forEach(a=>a.href=`/${a.dataset.targetSlug}/?lang=${this.currentLang}`);document.dispatchEvent(new CustomEvent('devquiz:language'))}
+ async init(){await this.load(this.currentLang).catch(async()=>{this.currentLang='en';await this.load('en')});const select=document.getElementById('language');for(const lang of this.supportedLanguages){const option=document.createElement('option');option.value=lang;option.textContent=lang.toUpperCase();select.append(option)}select.addEventListener('change',()=>this.setLanguage(select.value));this.render()}
+ getCurrentLanguage(){return this.currentLang}
 }
-
-const i18n = new I18n();
+window.i18n=new I18n();

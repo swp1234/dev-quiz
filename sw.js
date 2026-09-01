@@ -1,26 +1,5 @@
-const CACHE_NAME = 'dev-quiz-v2';
-const urlsToCache = [
-    './',
-    './index.html',
-    './css/style.css',
-    './js/app.js',
-    './js/data.js',
-    './js/sound-engine.js',
-    './manifest.json',
-    './icon-192.svg',
-    './icon-512.svg'
-];
-
-self.addEventListener('install', event => {
-    event.waitUntil(
-        caches.open(CACHE_NAME)
-            .then(cache => cache.addAll(urlsToCache))
-    );
-});
-
-self.addEventListener('fetch', event => {
-    event.respondWith(
-        caches.match(event.request)
-            .then(response => response || fetch(event.request))
-    );
-});
+const CACHE='dev-quiz-v2',SCOPE='/dev-quiz/';
+const ASSETS=[SCOPE,`${SCOPE}index.html`,`${SCOPE}css/style.css`,`${SCOPE}js/i18n.js`,`${SCOPE}js/data.js`,`${SCOPE}js/app.js`,`${SCOPE}manifest.json`,`${SCOPE}icon-192.svg`,`${SCOPE}icon-512.svg`,...['ko','en','ja','es','pt','zh','id','tr','de','fr','hi','ru'].map(l=>`${SCOPE}js/locales/${l}.json`)];
+self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
+self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(names=>Promise.all(names.filter(n=>n.startsWith('dev-quiz-')&&n!==CACHE).map(n=>caches.delete(n)))).then(()=>self.clients.claim())));
+self.addEventListener('fetch',e=>{const u=new URL(e.request.url);if(e.request.method!=='GET'||u.origin!==self.location.origin||!u.pathname.startsWith(SCOPE))return;e.respondWith(fetch(e.request).then(r=>{if(r.ok)caches.open(CACHE).then(c=>c.put(e.request,r.clone()));return r}).catch(async()=>(await caches.match(e.request))||caches.match(`${SCOPE}index.html`)))})
